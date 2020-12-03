@@ -1,1 +1,73 @@
 <h1>Quản lý nhân viên (tài khoản)</h1>
+<div class="card">
+  <h5 class="card-header d-flex justify-content-between">
+     <div class="input-group justify-content-end">
+                 <input type="text" placeholder="Tìm kiếm">
+                    <a class="btn btn-outline-primary" href="#" role="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a> 
+        </div>    
+  </h5>
+  <h4 class="card-header d-flex justify-content-end">
+            <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
+                <option selected>Sắp xếp: Không sắp xếp</option>
+                <option value="1">Tăng dần</option>
+                <option value="2">Giảm dần</option>
+                <option value="3">Lộn xộn</option>
+            </select>
+            <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
+                <option selected>Lọc: Tình trạng</option>
+                <option value="1">Tăng dần</option>
+                <option value="2">Giảm dần</option>
+                <option value="3">Lộn xộn</option>
+            </select>
+            <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;"> 
+                <option selected>Theo:</option>
+                <option value="1">Tăng dần</option>
+                <option value="2">Giảm dần</option>
+                <option value="3">Lộn xộn</option>
+            </select>
+  </h4>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p class="card-text">Không có dữ liệu.</p>
+  </div>
+  {{else}}
+  <div class="card-body">
+    <div class="row">
+      {{#each this.employees}}
+        {{!-- <div class="row"> --}}
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="row justify-content-between">
+                  <div class="col-4">
+                      <p class="card-text">Mã nhân viên:</p>
+                      <p class="card-text">Tên nhân viên:</p>
+                      <p class="card-text">Chức vụ:</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="card-text">{{IDEm}}</p>
+                    <p class="card-text">{{NameEm}}</p>
+                    <p class="card-text">{{RoleEm}}</p>
+                    <a class="btn btn-success float-right" href="#" role="button">
+                  <i class="fas fa-edit "></i>
+                </a> 
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        {{!-- </div> --}}
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+  <div class="card-footer text-muted">
+    <a class="btn btn-outline-success float-right" href="/employeeNew" role="button">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+        Thêm nhân viên
+    </a>
+  </div>
+</div>
