@@ -1,1 +1,80 @@
 <h1>Quản lý kiểm kho</h1>
+<div class="card">
+  <h5 class="card-header d-flex justify-content-between">
+     <div class="input-group justify-content-end">
+                 <input type="text" placeholder="Tìm kiếm">
+                    <a class="btn btn-outline-primary" href="#" role="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a> 
+        </div>    
+  </h5>
+  <h4 class="card-header d-flex justify-content-end">
+            <select class="custom-select" id="inputInventoriesSelectProvider" style="margin-right: 15px;">
+                <option selected>Nhà cung cấp</option>
+                <option value="1">---------</option>
+
+            </select>
+            <select class="custom-select" id="inputInventoriesSelectTime" style="margin-right: 15px;">
+                <option selected>Thời gian</option>
+                <option value="1">Tăng dần</option>
+                <option value="2">Giảm dần</option>
+                <option value="3">--------</option>
+            </select>
+            <select class="custom-select" id="inputInventoriesSelectProduceStatus" style="margin-right: 15px;"> 
+                <option selected>Tình trạng hàng hóa</option>
+                <option value="1">Sắp hết hạn</option>
+                <option value="2">Tốt</option>
+                <option value="3">--------</option>
+            </select>
+            <select class="custom-select" id="inputInventoriesSelectSort" style="margin-right: 15px;"> 
+                <option selected>Sắp xếp</option>
+                <option value="1">Thời gian</option>
+                <option value="2">Giá trị</option>
+                <option value="3">A - Z</option>
+                <option value="4">--------</option>
+            </select>
+  </h4>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p class="card-text">Không có dữ liệu.</p>
+  </div>
+  {{else}}
+  <div class="card-body">
+    <div class="row">
+      {{#each this.inventories}}
+        {{!-- <div class="row"> --}}
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="row justify-content-between">
+                  <div class="col-4">
+                      <p class="card-text">Mã phiếU:</p>
+                      <p class="card-text">Thời gian lập:</p>
+                      <p class="card-text">Tổng chênh lệch:</p>
+                      <p class="card-text">Tình trạng:</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="card-text"></p>
+                    <p class="card-text"></p>
+                    <p class="card-text"></p>
+                    <a class="btn btn-success float-right" href="#" role="button">
+                  <i class="fas fa-edit "></i>
+                </a> 
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        {{!-- </div> --}}
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+  <div class="card-footer text-muted">
+    <a class="btn btn-outline-success float-right" href="/inventoryNew" role="button">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+        Tạo phiếu kiểm kho
+    </a>
+  </div>
+</div>
