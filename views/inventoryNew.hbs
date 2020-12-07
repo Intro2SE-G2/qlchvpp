@@ -1,1 +1,110 @@
-<h1>Thêm phiếu kiểm kho</h1>
+<div>
+  <div class="row">
+    <div class="col-8 col">
+      <div class="row-6">
+
+      </div>
+      <div class="card" style="height: 600px;">
+        <div class="row" style="margin: 5px">
+          <h5 class="col-2 font-weight-bold">Mã hàng</h5>
+          <h5 class="col-2 font-weight-bold">Tên hàng</h5>
+          <h5 class="col-2 font-weight-bold">Tồn kho</h5>
+          <h5 class="col-2 font-weight-bold">Thực tế</h5>
+          <h5 class="col-2 font-weight-bold">Chênh lệch</h5>
+          <h5 class="col-2 font-weight-bold">Giá trị lệch</h5>
+        </div>
+        <div style="margin: 5px 10px 5px 10px">
+          <div class="card" style="background-color: floralwhite; margin: 5px">
+            <div class="row">
+              <h5 class="col-2 font-weight-bold" style="text-align: left">001</h5>
+              <h5 class="col-2 font-weight-bold" style="text-align: left">AAAAAAA</h5>
+              <h5 class="col-2 font-weight-bold" style="text-align: left">1000</h5>
+              <input class="col-2" type="number" style="margin:2px 0 2px 0">
+              <h5 class="col-2 font-weight-bold" style="text-align: left">1</input>
+                <h5 class="col-2 font-weight-bold" style="text-align: left">1200</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 card" style="padding: 20px 10px 20px 10px">
+      <h5 class="font-weight-bold" style="padding-top: 10px">Mã phiếu kiểm kho</h5>
+      <hr style="margin-top: -5px">
+      <p>KK1</p>
+
+      <h5 class="font-weight-bold" style="padding-top: 10px">Thông tin cơ bản</h5>
+      <hr style="margin-top: -5px">
+      <label class="row" style="margin-bottom: 5px">
+        <p class="col-6">Thời gian lập: </p>
+        <input class="col-5" type="date">
+      </label>
+
+      <label class="row" style="margin-bottom: 5px">
+        <p class="col-6">Mã nhân viên kho: </p>
+        <input class="col-5">
+      </label>
+
+      <label class="row" style="margin-bottom: 5px">
+        <p class="col-6">Tên nhân viên kho: </p>
+        <input class="col-5">
+      </label>
+
+      <h5 class="font-weight-bold" style="padding-top: 10px">Tổng tiền lệch</h5>
+      <hr style="margin-top: -5px">
+      <label class="row" style="margin-bottom: 5px">
+        <p class="col-6">Tổng thực tế: </p>
+        <input class="col-5">
+      </label>
+      <label class="row" style="margin-bottom: 5px">
+        <p class="col-6">Tổng lệch: </p>
+        <input class="col-5">
+      </label>
+      <h5 class="font-weight-bold" style="padding-top: 10px">Tình Trạng</h5>
+      <hr style="margin-top: -5px">
+      <select class="custom-select col-6" id="inputStatus" style="margin: 15px 0px 15px 0px;">
+        <option value="1" selected>Đang thực hiện</option>
+        <option value="2">Chưa thực hiện</option>
+        <option value="3">Đã hoàn thành</option>
+      </select>
+      <button class='btn-primary offset-7 col-4' style="margin-top: 20px, margin-bottom: 20px">Thêm phiếu</button>
+    </div>
+  </div>
+  <div class="card my-custom-scrollbar my-custom-scrollbar-primary" style="margin: 20px -10px 20px -10px;">
+    <h5 class="card-header d-flex justify-content-between">
+      <div class="input-group justify-content-end">
+        <input type="text" placeholder="Tìm kiếm">
+        <a class="btn btn-outline-primary" href="#" role="button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </a>
+      </div>
+    </h5>
+    <div class="scrollbar scrollbar-primary" style="height: 300px; overflow: scroll">
+      <div class=" force-overflow">
+        <div class="card" style="background-color: darkgray; margin: 5px">
+          <div class="card-body">
+            <div class="row justify-content-between">
+              <div class="col-4">
+                <img src="#" height="200px">
+              </div>
+              <div class="col-4">
+                <p class="card-text font-weight-bold">Tên sản phẩm:</p>
+                <p class="card-text font-weight-bold">Mã sản phẩm:</p>
+                <p class="card-text font-weight-bold">Đơn giá:</p>
+              </div>
+              <div class="col-4">
+                <p class="card-text font-weight-bold"></p>
+                <p class="card-text font-weight-bold"></p>
+                <p class="card-text font-weight-bold"></p>
+                <a class="btn btn-success float-right" href="#" role="button">
+                  <i class="fas fa-plus "></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
