@@ -6,15 +6,27 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var billRouter = require('./routes/bills');
+
 var customerRouter = require('./routes/customers');
+
+
 var employeeRouter = require('./routes/employees');
+
 var inventoryRouter = require('./routes/inventories');
 var inventoryNewRouter = require('./routes/inventoryNew');
 var loginRouter = require('./routes/login');
+
 var productRouter = require('./routes/products');
+
 var receiptRouter = require('./routes/receipts');
+
 var statisticRouter = require('./routes/statistics');
+
 var supplierRouter = require('./routes/supplies');
+var supplierNewRouter = require('./routes/supplierNew');
+var supplierDetailRouter = require('./routes/supplierDetail');
+var supplierListRouter = require('./routes/supplierList');
+
 var usersRouter = require('./routes/users');
 var app = express();
 
@@ -39,9 +51,13 @@ app.use('/products', productRouter);
 app.use('/receipts', receiptRouter);
 app.use('/statistics', statisticRouter);
 app.use('/suppliers', supplierRouter);
+app.use('/supplierNew', supplierNewRouter);
+app.use('/supplierDetail', supplierDetailRouter);
+app.use('/supplierList', supplierListRouter);
 app.use('/users', usersRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  
   next(createError(404));
 });
 
