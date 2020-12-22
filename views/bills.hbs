@@ -1,1 +1,120 @@
 <h1>Quản lý hóa đơn</h1>
+<div class="card">
+    <h5 class="card-header d-flex justify-content-between">
+        <div class="input-group justify-content-end">
+            <input type="text" placeholder="Tìm kiếm tên khách hàng">
+            <a class="btn btn-outline-primary" href="#" role="button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </div>
+    </h5>
+    <h4 class="card-header d-flex justify-content-end col-12">
+        <select class="custom-select" id="inputInventoriesSelectTime" style="margin-right: 15px;">
+            <option selected>Thời gian lập</option>
+            <option value="1">Tất cả</option>
+            <option value="2" >Tùy chọn</option>
+        </select>
+        <div class="mr-2">
+            <label>Ngày bắt đầu</label>
+            <input type="date" name="begin" placeholder="dd-mm-yyyy" value="">
+        </div>
+        <div class="mr-2">
+            <label>Ngày kết thúc</label>
+            <input type="date" name="end"placeholder="dd-mm-yyyy" value="">
+        </div>
+        <select class="custom-select" id="inputBillSelectSort" style="margin-right: 15px;">
+            <option selected>Không sắp xếp</option>
+            <option value="1">Thời gian tăng dần</option>
+            <option value="2">Thời gian giảm dần</option>
+            <option value="3">Giá trị tăng dần</option>
+            <option value="4">Giá trị giảm dần</option>
+        </select>
+    </h4>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-sm mt-2 mb-4 table-borderless">
+                <tbody>
+                <tr >
+                    <th >Mã hóa đơn:</th>
+                    <td colspan="4">HD0001</td>
+                </tr>
+                <tr>
+                    <th>Tổng tiền thanh toán:</th>
+                    <td>1.000.000đ</td>
+                </tr>
+                <tr>
+                    <th>Mã khách hàng:</th>
+                    <td>KH0001</td>
+                </tr>
+                <tr>
+                    <th>Tên khách hàng:</th>
+                    <td>Customer 1</td>
+                </tr>
+                <tr>
+                    <th>Thời gian lập:</th>
+                    <td>12/12/2020</td>
+                    <td>
+                        <a class="btn btn-success float-right"  href="" role="button">
+                            <i data-feather="arrow-right"></i>
+                        </a>
+                    </td>
+
+                </tr>
+                </tbody>
+
+            </table>
+            <div class="dropdown-divider"></div>
+        </div>
+    </div>
+    {{#if this.empty}}
+        <div class="card-body">
+            <p class="card-text">Không có dữ liệu.</p>
+        </div>
+    {{else}}
+        <div class="card-body">
+            <div class="row">
+                {{#each this.bill}}
+                {{!-- <div class="row"> --}}
+                    <table class="table table-sm mt-2 mb-4 table-borderless">
+                        <tbody>
+                        <tr>
+                            <th>Mã hóa đơn:</th>
+                            <td>{{billId}}</td>
+                        </tr>
+                        <tr>
+                            <th>Tổng tiền thanh toán:</th>
+                            <td>{{total}}</td>
+                        </tr>
+                        <tr>
+                            <th>Mã khách hàng:</th>
+                            <td>{{customerId}}</td>
+                        </tr>
+                        <tr>
+                            <th>Tên khách hàng:</th>
+                            <td>{{customerName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Thời gian lập:</th>
+                            <td>{{date}}</td>
+                            <td>
+                                <a class="btn btn-success float-right"  href="" role="button">
+                                    <i data-feather="arrow-right"></i>
+                                </a>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="dropdown-divider"></div>
+                {{!-- </div> --}}
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="card-footer text-muted">
+        <a class="btn btn-outline-success float-right" href="/billNew" role="button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Tạo hóa đơn
+        </a>
+    </div>
+</div>
