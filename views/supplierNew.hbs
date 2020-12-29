@@ -12,7 +12,9 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
+                <form method="post" id="addSupplierForm">
                 <div class="row" id="headInfoSupplier">
+
                     <div class="col-sm-3">
                         <p><b>Mã nhà cung cấp</b></p>
                     </div>
@@ -20,7 +22,7 @@
                     <div class="col-sm-5">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default"
+                            <input type="text" class="form-control" aria-label="Default" name="MaNCC"
                                 aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -52,7 +54,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default"
+                            <input type="text" class="form-control" aria-label="Default" name="TenNCC"
                                 aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -66,7 +68,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default"
+                            <input type="text" class="form-control" aria-label="Default" name="SDT"
                                 aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -80,7 +82,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default"
+                            <input type="text" class="form-control" aria-label="Default" name="Email"
                                 aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -94,14 +96,15 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default"
+                            <input type="text" class="form-control" aria-label="Default" name="DiaChi"
                                 aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
                 </div>
 
-
+                </form>
             </div>
+
         </div>
 
 
@@ -120,6 +123,7 @@
             </div>
 
         </div>
+
 
         <style>
             #headInfoSupplier {
