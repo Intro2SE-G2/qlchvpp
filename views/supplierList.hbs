@@ -67,7 +67,11 @@
 
     <br />
 
+
+
+
     <div class="row">
+    {{#each Supplier}}
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
@@ -76,80 +80,19 @@
                             <p>Mã nhà cung cấp:</p>
                             <p>Tên nhà cung cấp:</p>
                             <p>Địa chỉ nhà cung cấp:</p>
-                            <a href="/supplierDetail" class="btn btn-primary" role="button">-></a>
+                            <a href="/supplierDetail/?id={{MaNhaCungCap}}" class="btn btn-primary" role="button">-></a>
                         </div>
                         <div class="col-sm-6">
-                            <p>001</p>
-                            <p>Adisak Krasison</p>
-                            <p>Bangkok, Thailand</p>
+                            <p>{{MaNhaCungCap}}</p>
+                            <p>{{TenNhaCungCap}}</p>
+                            <p>{{DiaChi}}</p>
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <p>Mã nhà cung cấp:</p>
-                            <p>Tên nhà cung cấp:</p>
-                            <p>Địa chỉ nhà cung cấp</p>
-                            <a href="/supplierDetail" class="btn btn-primary" role="button">-></a>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>002</p>
-                            <p>Mohamed RidWan</p>
-                            <p>Palembang, Indonesia</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <p>Mã nhà cung cấp:</p>
-                            <p>Tên nhà cung cấp:</p>
-                            <p>Địa chỉ nhà cung cấp:</p>
-                            <a href="/supplierDetail" class="btn btn-primary" role="button">-></a>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>003</p>
-                            <p>Phithiwat Charlemsron</p>
-                            <p>Phuket, Thailand</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <p>Mã nhà cung cấp:</p>
-                            <p>Tên nhà cung cấp:</p>
-                            <p>Địa chỉ nhà cung cấp</p>
-                            <a href="/supplierDetail" class="btn btn-primary" role="button">-></a>
-                        </div>
-                        <div class="col-sm-6">
-                            <p>004</p>
-                            <p>Jonnathan Small</p>
-                            <p>London, UK</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    {{/each}}
     </div>
 
 

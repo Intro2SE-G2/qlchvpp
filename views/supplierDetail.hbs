@@ -24,6 +24,8 @@
 
 <body>
 
+    {{#Supplier}}
+
     <div class="row">
         <div class="card">
             <div class="card-header" id="headInfoSupplier">
@@ -38,7 +40,7 @@
                         Mã nhà cung cấp
                     </div>
                     <div class="col-sm-8">
-                        NCC001
+                        {{MaNhaCungCap}}
                     </div>
                 </div>
 
@@ -49,7 +51,7 @@
                         Tên nhà cung cấp
                     </div>
                     <div class="col-sm-8">
-                        ABC
+                        {{TenNhaCungCap}}
                     </div>
                 </div>
 
@@ -60,7 +62,7 @@
                         SDT
                     </div>
                     <div class="col-sm-8">
-                        123456789
+                        {{SDT}}
                     </div>
                 </div>
 
@@ -71,7 +73,7 @@
                         Email
                     </div>
                     <div class="col-sm-8">
-                        a@gmail.com
+                        {{Email}}
                     </div>
                 </div>
 
@@ -82,13 +84,14 @@
                         Địa chỉ
                     </div>
                     <div class="col-sm-8">
-                        Q5
+                        {{DiaChi}}
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+    {{/Supplier}}
 
     <br />
 

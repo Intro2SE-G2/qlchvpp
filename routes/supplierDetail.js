@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+const supplierController=require("../Controller/supplierControler");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.render("supplierDetail",{ title: 'Xem sửa nhà cung cấp' });
-});
 
+router.get('/',supplierController.detail);
+
+router.get('/?id=:MaNhaCungCap',supplierController.detail);
 module.exports = router;
 
 

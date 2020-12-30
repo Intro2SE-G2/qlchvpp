@@ -24,8 +24,9 @@ var statisticRouter = require('./routes/statistics');
 
 var supplierRouter = require('./routes/supplies');
 var supplierNewRouter = require('./routes/supplierNew');
-var supplierDetailRouter = require('./routes/supplierDetail');
+
 var supplierListRouter = require('./routes/supplierList');
+var supplierDetailRouter=require('./routes/supplierDetail');
 
 var usersRouter = require('./routes/users');
 var app = express();
@@ -34,7 +35,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-require('./DAL/qlchvppDAL');
+
 
 
 app.use(logger('dev'));
@@ -55,7 +56,8 @@ app.use('/receipts', receiptRouter);
 app.use('/statistics', statisticRouter);
 app.use('/suppliers', supplierRouter);
 app.use('/supplierNew', supplierNewRouter);
-app.use('/supplierDetail', supplierDetailRouter);
+app.use('/supplierDetail',supplierDetailRouter);
+
 app.use('/supplierList', supplierListRouter);
 app.use('/users', usersRouter);
 // catch 404 and forward to error handler
