@@ -16,5 +16,8 @@
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "express-handlebars": "^5.2.0"
   }
 }

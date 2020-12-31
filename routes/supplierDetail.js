@@ -3,10 +3,16 @@ var router = express.Router();
 
 const supplierController=require("../Controller/supplierControler");
 
+router.get('/:MaNhaCungCap/modify',supplierController.modify);
 
-router.get('/',supplierController.detail);
 
-router.get('/?id=:MaNhaCungCap',supplierController.detail);
+router.get('/:MaNhaCungCap',supplierController.detail);
+
+
+
+router.post('/:MaNhaCungCap/modify',supplierController.postModify);
+
+
 module.exports = router;
 
 

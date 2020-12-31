@@ -9,43 +9,38 @@
 <br />
 
 <body>
+
+{{#Supplier}}
+
+
 <div class="row">
     <div class="card">
         <div class="card-body">
-            <form method="post" id="addSupplierForm">
+            <form method="post" id="addSupplierForm" action="/supplierDetail/{{MaNhaCungCap}}/modify">
                 <div class="row" id="headInfoSupplier">
 
                     <div class="col-sm-3">
-                        <p><b>Mã khách hàng</b></p>
+                        <p><b>Mã nhà cung cấp</b></p>
                     </div>
 
                     <div class="col-sm-5">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="MaNCC" readonly value="{{displayKey}}"
+                            <input type="text" class="form-control" aria-label="Default" name="MaNCC" readonly value="{{MaNhaCungCap}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
 
                 </div>
-
-
-                <br />
-                <div class="row" style="font-size: 20px;">
-                    <div class="col-sm-12">
-                        <p><b>Thông tin cơ bản</b></p>
-                    </div>
-                </div>
-
                 <br />
                 <div class="row" id="infoSupplier">
                     <div class="col-sm-3">
-                        <p><b>Tên khách hàng</b></p>
+                        <p><b>Tên nhà cung cấp</b></p>
                     </div>
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="TenNCC"
+                            <input type="text" class="form-control" aria-label="Default" name="TenNCC" value="{{TenNhaCungCap}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -59,7 +54,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="SDT"
+                            <input type="text" class="form-control" aria-label="Default" name="SDT" value="{{SDT}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -73,7 +68,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="Email"
+                            <input type="text" class="form-control" aria-label="Default" name="Email" value="{{Email}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -87,27 +82,11 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="DiaChi"
+                            <input type="text" class="form-control" aria-label="Default" name="DiaChi" value="{{DiaChi}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
                 </div>
-
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam">
-                    <label class="form-check-label" for="exampleRadios1">
-                        Default radio
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios2" value="Nữ">
-                    <label class="form-check-label" for="exampleRadios2">
-                        Second default radio
-                    </label>
-                </div>
-
-
 
             </form>
         </div>
@@ -115,21 +94,22 @@
     </div>
 
 
+
     <div class="containers">
         <div class="text-right">
             <a
-                    href="/suppliers" class="btn btn-outline-danger" id="cancelAddSupplier" role="button">
+                    href="/supplierDetail/{{MaNhaCungCap}}" class="btn btn-outline-danger" id="cancelAddSupplier" role="button">
                 Hủy </a>
             </a>
             <button
                     class="btn btn-outline-info" id="addSupplier" type="submit" form="addSupplierForm">
-                + Xác nhận thêm </button>
+                + Lưu thay đổi </button>
 
 
         </div>
 
     </div>
-
+{{/Supplier}}
 </div>
 
 

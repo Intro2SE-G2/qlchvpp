@@ -4,9 +4,9 @@ var router = express.Router();
 const supplierController=require('../Controller/supplierControler');
 /* GET users listing. */
 
-router.get('/', function(req, res, next) {
-    res.render("supplierNew",{ title: 'Thêm nhà cung cấp' });
-});
+
+
+router.get('/',supplierController.RenderAddNew);
 
 router.post('/',supplierController.addNewSupplier);
 

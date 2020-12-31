@@ -2,12 +2,26 @@ const db=require("../DAL/qlchvppDAL");
 const supplierModel=require("../Model/supplierModel");
 
 
+exports.totalRow=async()=> {
+    const total = await supplierModel.totalRow()
+
+}
+
+exports.RenderAddNew=async(req,res,next)=>{
+
+    const total=await supplierModel.totalRow();
+
+    let displayKey=Date.now();
+    const utcSecondsSinceEpoch = Math.round(displayKey / 1000)
+    displayKey="NCC"+utcSecondsSinceEpoch;
+    res.render('supplierNew',{title:'Thêm mới mặt hàng',displayKey:displayKey});
+}
 
 
 exports.addNewSupplier=async(req,res,next)=>
 {
     const supplier={};
-    supplier.MaNhacungCap=req.body.MaNCC;
+    supplier.MaNhaCungCap=req.body.MaNCC;
     supplier.TenNhaCungCap=req.body.TenNCC;
     supplier.SDT=req.body.SDT;
     supplier.Email=req.body.Email;
@@ -25,9 +39,28 @@ exports.listSupplier=async(req,res,next)=>
 
 exports.detail=async(req,res,next)=>
 {
-    const id=req.query.id;
+    const id=req.params.MaNhaCungCap;
     console.log(id);
     const supplier=await supplierModel.detail(id)
-    res.render('supplierDetail',{title:"Chi tiết nhà cung cấp", supplier:supplier
-    });
+    res.render('supplierDetail',{title:"Chi tiết nhà cung cấp", Supplier:supplier});
+}
+exports.modify=async(req,res,next)=>
+{
+    const id=req.params.MaNhaCungCap;
+    const supplier=await supplierModel.detail(id);
+    res.render('supplierModify',{title:"Chỉnh sửa",Supplier:supplier});
+}
+exports.postModify=async(req,res,next)=>
+{
+    const supplier={};
+    supplier.MaNhaCungCap=req.body.MaNCC;
+    supplier.TenNhaCungCap=req.body.TenNCC;
+    supplier.DiaChi=req.body.DiaChi;
+    supplier.SDT=req.body.SDT;
+    supplier.Email=req.body.Email;
+
+    console.log(supplier.MaNhaCungCap);
+
+    const backUrl='/supplierDetail/'+supplier.MaNhaCungCap;
+    await supplierModel.modify(supplier).then(res.redirect(backUrl));
 }
