@@ -35,7 +35,7 @@
   {{else}}
   <div class="card-body">
     <div class="row">
-      {{#each this.customers}}
+      {{#each this.khachhang}}
         {{!-- <div class="row"> --}}
           <div class="col-sm-6">
             <div class="card">
@@ -47,10 +47,10 @@
                       <p class="card-text">Số điện thoại:</p>
                   </div>
                   <div class="col-4">
-                    <p class="card-text">{{CusID}}</p>
-                    <p class="card-text">{{CusName}}</p>
-                    <p class="card-text">{{CusPhone}}</p>
-                    <a class="btn btn-success float-right" href="/customers/{{CusID}}" role="button">
+                    <p class="card-text">{{MaKhachHang}}</p>
+                    <p class="card-text">{{TenKhachHang}}</p>
+                    <p class="card-text">{{SDT}}</p>
+                    <a class="btn btn-success float-right" href="/customers/{{MaKhachHang}}" role="button">
                   <i class="fas fa-edit "></i>
                 </a> 
                   </div>

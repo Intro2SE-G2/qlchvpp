@@ -7,9 +7,7 @@ exports.totalRow=async()=> {
 
 }
 
-exports.RenderAddNew=async(req,res,next)=>{
-
-    const total=await supplierModel.totalRow();
+exports.RenderAddNew=function(req,res,next){
 
     let displayKey=Date.now();
     const utcSecondsSinceEpoch = Math.round(displayKey / 1000)

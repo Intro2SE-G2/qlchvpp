@@ -1,10 +1,18 @@
-<h1>
-    <a>
-        <a href="/suppliers" class="btn btn-outline-primary" role="link">
-            <-</a>
-    </a>
-    Thêm nhà cung cấp
-</h1>
+<h3>
+    <div class="containters">
+
+        <div class="row mt-3">
+            <div  class="col">
+                <a>
+                    <a href="/customers"  class="back-btn" role="link">
+                        <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>  </a>
+                </a>
+                Chi tiết khách hàng
+            </div>
+
+        </div>
+    </div>
+</h3>
 
 <br />
 
@@ -22,7 +30,7 @@
                     <div class="col-sm-5">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="MaNCC" readonly value="{{displayKey}}"
+                            <input type="text" class="form-control" aria-label="Default" name="MaKhachHang" readonly value="{{displayKey}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -45,7 +53,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="TenNCC"
+                            <input type="text" class="form-control" aria-label="Default" name="TenKhachHang"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -94,18 +102,28 @@
                 </div>
 
 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam">
-                    <label class="form-check-label" for="exampleRadios1">
-                        Default radio
-                    </label>
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-3">
+                        <p><b>Giới tính</b></p>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam">
+                            <label class="form-check-label" for="exampleRadios1">
+                                Nam
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios2" value="Nữ">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Nữ
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios2" value="Nữ">
-                    <label class="form-check-label" for="exampleRadios2">
-                        Second default radio
-                    </label>
-                </div>
+
+
+
 
 
 
@@ -220,6 +238,7 @@
 
 <script
 >
+
 
 </script>
 

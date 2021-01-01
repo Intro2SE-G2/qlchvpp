@@ -88,6 +88,18 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+Handlebars.registerHelper('GioiTinh',function(GioiTinh) {
+  if (GioiTinh=='Nam')
+  {
+    return 'checked';
+  }
+  else
+  {
+    return "";
+  }
+
+}
+
 hbs.handlebars.registerHelper('json', function(context) {
   return JSON.stringify(context);
 });

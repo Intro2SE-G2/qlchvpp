@@ -10,6 +10,8 @@ router.get('/',supplierController.RenderAddNew);
 
 router.post('/',supplierController.addNewSupplier);
 
+
+
 module.exports = router;
 
 
