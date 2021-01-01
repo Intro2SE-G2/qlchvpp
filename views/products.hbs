@@ -1,1 +1,163 @@
-<h1>Quản lý hàng hóa</h1>
+<h1>Quản lý mặt hàng</h1>
+<div class="card">
+    <h5 class="card-header d-flex justify-content-between">
+        <div class="input-group justify-content-end">
+            <input type="text" placeholder="Tìm kiếm">
+            <a class="btn btn-outline-primary" href="#" role="button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </div>
+    </h5>
+    <h4 class="card-header d-flex justify-content-end">
+        <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
+            <option selected>Sắp xếp: Không sắp xếp</option>
+            <option value="1">Tăng dần</option>
+            <option value="2">Giảm dần</option>
+            <option value="3">Lộn xộn</option>
+        </select>
+        <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
+            <option selected>Lọc: Tình trạng</option>
+            <option value="1">Tăng dần</option>
+            <option value="2">Giảm dần</option>
+            <option value="3">Lộn xộn</option>
+        </select>
+        <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
+            <option selected>Theo:</option>
+            <option value="1">Tăng dần</option>
+            <option value="2">Giảm dần</option>
+            <option value="3">Lộn xộn</option>
+        </select>
+    </h4>
+    {{#if this.empty}}
+        <div class="card-body">
+            <p class="card-text">Không có dữ liệu.</p>
+        </div>
+    {{else}}
+        <!--Test part-->
+        <div class="card col-3 text-center">
+            <img class="card-img-top " src="" alt="Product">
+            <div class="card-header">
+                <h5 class="card-title font-weight-bold">Tên sản phẩm</h5>
+                <p class="card-text">Mã sản phẩm</p>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                    <table class="table-responsive table-sm table-borderless font-weight-light">
+                        <thead>
+                        <tr>
+                            <th >Tình trạng</th>
+                            <th >Giá bán</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="p">Ngừng kinh doanh</td>
+                            <td>100.000d</td>
+                        </tr>
+
+                        </tbody>
+
+                        <thead>
+                        <tr>
+                            <th >Tồn kho</th>
+                            <th >Đơn vị tính</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td >20</td>
+                            <td>Cái</td>
+                        </tr>
+                        </tbody>
+                        <thead>
+                        <tr>
+                            <th >Loại</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Bút</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="dropdown-divider"></div>
+                    <a class="btn btn-success btn-pill btn-sm align-content-stretch" href="/products/id" role="button">
+                        Xem chi tiết
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!--Test part-->
+        <div class="card-body">
+            <div class="row">
+                {{#each this.khachhang}}
+                {{!-- <div class="row"> --}}
+                    <div class="card col-3 text-center">
+                        <img class="card-img-top " src="" alt="Product">
+                        <div class="card-header">
+                            <h5 class="card-title font-weight-bold">Tên sản phẩm</h5>
+                            <p class="card-text">Mã sản phẩm</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <table class="table-responsive table-sm table-borderless font-weight-light">
+                                    <thead>
+                                    <tr>
+                                        <th >Tình trạng</th>
+                                        <th >Giá bán</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="p">Ngừng kinh doanh</td>
+                                        <td>100.000d</td>
+                                    </tr>
+
+                                    </tbody>
+
+                                    <thead>
+                                    <tr>
+                                        <th >Tồn kho</th>
+                                        <th >Đơn vị tính</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td >20</td>
+                                        <td>Cái</td>
+                                    </tr>
+                                    </tbody>
+                                    <thead>
+                                    <tr>
+                                        <th >Loại</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Bút</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <div class="dropdown-divider"></div>
+                                <a class="btn btn-success btn-pill btn-sm stretched-link" href="/product/id" role="button">
+                                    Xem chi tiết
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                {{!-- </div> --}}
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="card-footer text-muted">
+        <a class="btn btn-outline-success btn-pill float-right" href="/products/productNew" role="button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Thêm mới
+        </a>
+    </div>
+</div>
