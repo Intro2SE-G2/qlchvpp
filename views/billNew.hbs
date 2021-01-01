@@ -1,1 +1,140 @@
-<h1>Thêm hóa đơn (bán hàng)</h1>
+<h1>
+    <a>
+        <a href="/bills" class="btn btn-outline-primary" role="link">
+            <-</a>
+    </a>
+    Tạo hóa đơn
+</h1>
+
+<form>
+    <div class="row">
+        <div class="col-8 col">
+            <div class="row-6">
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-sm mt-2 mb-4 table-borderless">
+                        <tbody>
+                        <td>
+                            <input class="small float-left col-3" type="number" min="1" placeholder="Số lượng">
+                        </td>
+                        <tr >
+
+                            <th >Mã hàng:</th>
+                            <td >HH0001</td>
+                        </tr>
+                        <tr>
+                            <th>Tên mặt hàng:</th>
+                            <td>Bút</td>
+                        </tr>
+                        <tr>
+                            <th>Đơn giá:</th>
+                            <td>1000đ</td>
+                        </tr>
+                        <tr>
+                            <th>Đơn vị tính:</th>
+                            <td>Cái</td>
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 card" style="padding: 20px 10px 20px 10px">
+            <h5 class="font-weight-bold" style="padding-top: 10px">Mã hóa đơn</h5>
+            <hr style="margin-top: -5px">
+            <p>KK1</p>
+
+            <h5 class="font-weight-bold" style="padding-top: 10px">Thông tin cơ bản</h5>
+            <hr style="margin-top: -5px">
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Thời gian lập: </p>
+                <input class="col-5" type="date">
+            </label>
+
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Mã khách hàng: </p>
+                <input class="col-5">
+            </label>
+
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Tên khách hàng: </p>
+                <input class="col-5">
+            </label>
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Số điện thoại: </p>
+                <input class="col-5">
+            </label>
+            <h5 class="font-weight-bold" style="padding-top: 10px">Nhân viên bán hàng</h5>
+            <hr style="margin-top: -5px">
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Mã nhân viên: </p>
+                <input class="col-5" type="text" readonly value="NV0001">
+            </label>
+
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Tên nhân viên: </p>
+                <input class="col-5" type="text" readonly value="Nguyễn Văn A">
+            </label>
+            <h5 class="font-weight-bold" style="padding-top: 10px">Tổng tiền thanh toán</h5>
+            <hr style="margin-top: -5px">
+            <label class="row" style="margin-bottom: 5px">
+                <p class="col-6">Thanh toán: </p>
+                <input class="col-5" type="number" readonly value="100000">
+            </label>
+            <div class="text-right mt-5">
+                <a href="/bills" class="btn btn-outline-danger" id="cancelAddSupplier" role="button">
+                    Hủy </a>
+                </a>
+                <button class="btn btn-success ml-2" id="addBill" type="submit" form="addBillForm">
+                    Lưu </button>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</form>
+    <div class="card my-custom-scrollbar my-custom-scrollbar-primary" style="margin: 20px -10px 20px -10px;">
+        <h5 class="card-header d-flex justify-content-between">
+            <div class="input-group justify-content-end">
+                <input type="text" placeholder="Tìm kiếm">
+                <a class="btn btn-outline-primary" href="#" role="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            </div>
+        </h5>
+        <div class="scrollbar scrollbar-primary" style="height: 300px; overflow: scroll">
+            <div class=" force-overflow">
+                <div class="card" style="background-color: darkgray; margin: 5px">
+                    <div class="card-body">
+                        <div class="row justify-content-between">
+                            <div class="col-4">
+                                <img src="#" height="200px">
+                            </div>
+                            <div class="col-4">
+                                <p class="card-text font-weight-bold">Tên sản phẩm:</p>
+                                <p class="card-text font-weight-bold">Mã sản phẩm:</p>
+                                <p class="card-text font-weight-bold">Đơn giá:</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="card-text font-weight-bold"></p>
+                                <p class="card-text font-weight-bold"></p>
+                                <p class="card-text font-weight-bold"></p>
+                                <a class="btn btn-success float-right" href="#" role="button">
+                                    <i class="fas fa-plus "></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

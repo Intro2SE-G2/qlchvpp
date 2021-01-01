@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0c347fe-9918-4453-97a9-772c603663fb" name="Default Changelist" comment="" />
+    <list default="true" id="f0c347fe-9918-4453-97a9-772c603663fb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bills.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/billDetail.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/billDetail.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/billNew.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/billNew.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bills.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/bills.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.hbs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +81,7 @@
       <workItem from="1609233871720" duration="8619000" />
       <workItem from="1609298469489" duration="23398000" />
       <workItem from="1609382593520" duration="25982000" />
+      <workItem from="1609486339929" duration="3895000" />
     </task>
     <servers />
   </component>
@@ -91,5 +99,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1478" height="2" key="GridCell.Tab.0.bottom" timestamp="1609490092022">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1478" height="2" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609490092022" />
+    <state width="1478" height="2" key="GridCell.Tab.0.center" timestamp="1609490092022">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1478" height="2" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609490092022" />
+    <state width="1478" height="2" key="GridCell.Tab.0.left" timestamp="1609490092021">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1478" height="2" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609490092021" />
+    <state width="1478" height="2" key="GridCell.Tab.0.right" timestamp="1609490092022">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1478" height="2" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609490092022" />
   </component>
 </project>
