@@ -25,21 +25,35 @@ exports.detail=async(id)=>
 }
 
 
-function getDetail(id)
-{
-    return new Promise((resolve, reject) => {
-        db_query('SELECT * from khachhang where MaKhachHang=?',id, (err, result) => {
-            return err ? reject(err) : resolve(result);
-        });
+
+exports.modify=async(customer)=> {
+    db_query('UPDATE khachhang SET TenKhachHang=?,SDT=?,Email=?,DiaChi=?,GioiTinh=? where MaKhachHang=?', [
+        customer.TenKhachHang,
+        customer.SDT,
+        customer.Email,
+        customer.DiaChi,
+        customer.GioiTinh,
+        customer.MaKhachHang], function (err, result) {
+        if (err) throw err;
+        console.log("Update success");
     });
 }
 
 
-function getListCustomer()
-{
-    return new Promise((resolve, reject) => {
-        db_query('SELECT * from khachhang', null, (err, result) => {
-            return err ? reject(err) : resolve(result);
+    function getDetail(id) {
+        return new Promise((resolve, reject) => {
+            db_query('SELECT * from khachhang where MaKhachHang=?', id, (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
         });
-    });
-}
+    }
+
+
+    function getListCustomer() {
+        return new Promise((resolve, reject) => {
+            db_query('SELECT * from khachhang', null, (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+

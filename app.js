@@ -40,6 +40,7 @@ var app = express();
 var hbs = expressHbs.create({});
 
 
+var handleBar=require('hbs');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -88,8 +89,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-Handlebars.registerHelper('GioiTinh',function(GioiTinh) {
-  if (GioiTinh=='Nam')
+handleBar.registerHelper('CheckGioiTinh',function(Value,CurrentValue) {
+  if (Value==CurrentValue)
   {
     return 'checked';
   }
@@ -98,7 +99,7 @@ Handlebars.registerHelper('GioiTinh',function(GioiTinh) {
     return "";
   }
 
-}
+});
 
 hbs.handlebars.registerHelper('json', function(context) {
   return JSON.stringify(context);

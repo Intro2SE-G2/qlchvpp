@@ -25,7 +25,7 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <form method="post" id="addSupplierForm" action="/supplierDetail/{{MaKhachHang}}/modify">
+                <form method="post" id="addSupplierForm" action="/customers/{{MaKhachHang}}/modify">
                     <div class="row" id="headInfoSupplier">
 
                         <div class="col-sm-3">
@@ -106,13 +106,13 @@
                             <div class="input-group mb-3">
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam">
+                                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam" {{CheckGioiTinh GioiTinh 'Nam'}}>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Nam
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios2" value="Nữ">
+                                    <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios2" value="Nữ" {{CheckGioiTinh GioiTinh 'Nữ'}}>
                                     <label class="form-check-label" for="exampleRadios2">
                                         Nữ
                                     </label>

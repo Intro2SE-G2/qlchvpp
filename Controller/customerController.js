@@ -43,3 +43,18 @@ exports.RenderModify=async(req,res,next)=>
 
     res.render('customerModify',{title:'Chỉnh sửa khách hàng',khachhang:customer});
 }
+
+exports.postModify=async(req,res,next)=>
+{
+    const customer={};
+    customer.MaKhachHang=req.body.MaKhachHang;
+    customer.TenKhachHang=req.body.TenKhachHang;
+    customer.SDT=req.body.SDT;
+    customer.Email=req.body.Email;
+    customer.DiaChi=req.body.DiaChi;
+    customer.GioiTinh=req.body.GioiTinh;
+
+    const backUrl="/customers/"+customer.MaKhachHang;
+    await customerModel.modify(customer).then(res.redirect(backUrl));
+
+}
