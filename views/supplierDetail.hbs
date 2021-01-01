@@ -3,10 +3,13 @@
 
 {{#Supplier}}
     <div class="containters">
+
+
+
         <div class="text-left">
             <a>
-                <a href="/supplierList" class="btn btn-outline-primary" role="link">
-                    <- </a>
+                <a href="/supplierList" class="back-btn " role="link">
+                    <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>  </a>
                 </a>
                 Thông tin chi tiết nhà cung cấp
         </div>
@@ -14,7 +17,7 @@
 
         <div class="text-right">
             <a>
-                <a href="/supplierDetail/{{MaNhaCungCap}}/modify" class="btn btn-outline-info" id="modifySupplier" role="link">
+                <a href="/supplierDetail/{{MaNhaCungCap}}/modify" class="btn btn-info" id="modifySupplier" role="link">
                     Chỉnh sửa</a>
             </a>
         </div>
@@ -104,7 +107,7 @@
                 <div class="containers">
                     <div class="text-left">
                         <a>
-                            <a href="#" class="btn btn-outline-danger" id="removeSupplier" role="link">
+                            <a href="#" class="btn btn-danger" id="removeSupplier" role="link">
                                 Xóa nhà cung cấp
                             </a>
                         </a>

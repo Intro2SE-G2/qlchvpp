@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+const customerController=require('../Controller/customerController');
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.render("customerNew",{ title: 'Thêm khách hàng mới' });
-});
+
+router.get('/',customerController.RenderNewCustomer);
+router.post('/',customerController.addNewCustomer);
 
 module.exports = router;
