@@ -10,22 +10,21 @@
     </h5>
     <h4 class="card-header d-flex justify-content-end">
         <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
-            <option selected>Sắp xếp: Không sắp xếp</option>
-            <option value="1">Tăng dần</option>
-            <option value="2">Giảm dần</option>
-            <option value="3">Lộn xộn</option>
+            <option selected>Loại : Tất cả</option>
+            <option value="1">Loại 1</option>
+            <option value="2">Loại 2</option>
+            <option value="3">Loại 3</option>
         </select>
         <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
-            <option selected>Lọc: Tình trạng</option>
-            <option value="1">Tăng dần</option>
-            <option value="2">Giảm dần</option>
-            <option value="3">Lộn xộn</option>
+            <option selected>Tình trạng: Tất cả</option>
+            <option value="1">T.trạng 1</option>
+            <option value="2">T.trạng 2</option>
+            <option value="3">T.trạng 3</option>
         </select>
         <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
-            <option selected>Theo:</option>
+            <option selected>Sắp xếp: Không</option>
             <option value="1">Tăng dần</option>
             <option value="2">Giảm dần</option>
-            <option value="3">Lộn xộn</option>
         </select>
     </h4>
     {{#if this.empty}}
@@ -40,9 +39,9 @@
                 <h5 class="card-title font-weight-bold">Tên sản phẩm</h5>
                 <p class="card-text">Mã sản phẩm</p>
             </div>
-            <div class="card-body">
+            <div class="card-body align-content-center">
                 <div class="text-center">
-                    <table class="table-responsive table-sm table-borderless font-weight-light">
+                    <table class="table-responsive table-sm mx-auto table-borderless font-weight-light">
                         <thead>
                         <tr>
                             <th >Tình trạng</th>
