@@ -49,9 +49,8 @@ initPassportLocal();
 
 
 
-var logOutRouter=require('./routes/logOut');
-
 var indexRouter = require('./routes/index');
+
 var billRouter = require('./routes/bills');
 
 var customerRouter = require('./routes/customers');
@@ -59,7 +58,6 @@ var customerRouter = require('./routes/customers');
 var employeeRouter = require('./routes/employees');
 
 var inventoryRouter = require('./routes/inventories');
-var loginRouter = require('./routes/login');
 
 var productRouter = require('./routes/products');
 
@@ -70,7 +68,7 @@ var statisticRouter = require('./routes/statistics');
 var supplierRouter = require('./routes/suppliers');
 
 
-var usersRouter = require('./routes/profile');
+var usersRouter = require('./routes/users');
 
 var defaultRouter=require('./routes/defaultRoute');
 
@@ -102,14 +100,12 @@ app.set('view engine', 'hbs');
 
 
 app.use('/',defaultRouter);
-
-app.use('/logout',logOutRouter);
-app.use('/homepage',indexRouter);
+app.use('/users',usersRouter);
+app.use('/index',indexRouter);
 app.use('/bills', billRouter);
 app.use('/customers', customerRouter);
 app.use('/employees', employeeRouter);
 app.use('/inventories', inventoryRouter);
-app.use('/login', loginRouter);
 app.use('/products', productRouter);
 app.use('/receipts', receiptRouter);
 app.use('/statistics', statisticRouter);
