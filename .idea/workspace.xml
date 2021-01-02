@@ -21,9 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f0c347fe-9918-4453-97a9-772c603663fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/productDetail.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/productDetail.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/productNew.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/productNew.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/receipts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/receipts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/billDetail.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/billDetail.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/billNew.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/billNew.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/customers.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/customers.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/products.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/products.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/receiptDetail.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/receiptDetail.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/receipts.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/receipts.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +85,8 @@
       <workItem from="1609382593520" duration="25982000" />
       <workItem from="1609492622678" duration="3958000" />
       <workItem from="1609506045538" duration="6824000" />
-      <workItem from="1609514445766" duration="1887000" />
+      <workItem from="1609514445766" duration="1963000" />
+      <workItem from="1609556898089" duration="7469000" />
     </task>
     <servers />
   </component>
@@ -101,21 +106,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1478" height="93" key="GridCell.Tab.0.bottom" timestamp="1609513243304">
+    <state width="1493" height="92" key="GridCell.Tab.0.bottom" timestamp="1609565502730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1478" height="93" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609513243304" />
-    <state width="1478" height="93" key="GridCell.Tab.0.center" timestamp="1609513243304">
+    <state width="1493" height="92" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609565502730" />
+    <state width="1493" height="92" key="GridCell.Tab.0.center" timestamp="1609565502730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1478" height="93" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609513243304" />
-    <state width="1478" height="93" key="GridCell.Tab.0.left" timestamp="1609513243303">
+    <state width="1493" height="92" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609565502730" />
+    <state width="1493" height="92" key="GridCell.Tab.0.left" timestamp="1609565502730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1478" height="93" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609513243303" />
-    <state width="1478" height="93" key="GridCell.Tab.0.right" timestamp="1609513243304">
+    <state width="1493" height="92" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609565502730" />
+    <state width="1493" height="92" key="GridCell.Tab.0.right" timestamp="1609565502730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1478" height="93" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609513243304" />
+    <state width="1493" height="92" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609565502730" />
   </component>
 </project>
