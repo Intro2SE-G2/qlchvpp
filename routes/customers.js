@@ -7,6 +7,8 @@ const customerController=require('../Controller/customerController');
 
 
 router.get('/',customerController.listCustomer);
+router.get('/customerNew',customerController.RenderNewCustomer);
+router.post('/customerNew',customerController.addNewCustomer);
 router.get('/:MaKhachHang',customerController.detail);
 router.get('/:MaKhachHang/modify',customerController.RenderModify);
 router.post('/:MaKhachHang/modify',customerController.postModify);

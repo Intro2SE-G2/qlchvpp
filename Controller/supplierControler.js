@@ -7,14 +7,13 @@ exports.totalRow=async()=> {
 
 }
 
-exports.RenderAddNew=function(req,res,next){
+exports.RenderAddNew=async (req,res,next) =>{
 
-    let displayKey=Date.now();
+    let displayKey= await Date.now();
     const utcSecondsSinceEpoch = Math.round(displayKey / 1000)
     displayKey="NCC"+utcSecondsSinceEpoch;
-    res.render('supplierNew',{title:'Thêm mới mặt hàng',displayKey:displayKey});
+    res.render('supplierNew',{title:'Thêm mới nhà cung cấp',displayKey:displayKey});
 }
-
 
 exports.addNewSupplier=async(req,res,next)=>
 {
@@ -31,7 +30,7 @@ exports.listSupplier=async(req,res,next)=>
 {
     let list=await supplierModel.supplerList();
 
-    res.render('supplierList',{title:"Danh sách nhà cung cấp",Supplier:list});
+    res.render('suppliers',{title:"Quản lý nhà cung cấp",Supplier:list});
 
 }
 
@@ -59,6 +58,6 @@ exports.postModify=async(req,res,next)=>
 
     console.log(supplier.MaNhaCungCap);
 
-    const backUrl='/supplierDetail/'+supplier.MaNhaCungCap;
+    const backUrl='/suppliers/'+supplier.MaNhaCungCap;
     await supplierModel.modify(supplier).then(res.redirect(backUrl));
 }

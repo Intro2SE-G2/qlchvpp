@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b195f101-41bb-435d-a86f-8d9db53e7c63" name="Default Changelist" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,4 +92,5 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+
 </project>

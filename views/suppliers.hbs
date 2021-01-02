@@ -1,34 +1,94 @@
 
+<h1>
+    Quản lý nhà cung cấp
+</h1>
 
-{{!-- <div class="jumbotron text-center">
-  <h1>Quản lý nhà cung cấp</h1>
-  <p>Quản lý thông tin của các nhà cung cấp trong cửa hàng</p> 
-</div> --}}
 
-<div class="jumbotron">
-  <h1>Quản lý nhà cung cấp</h1>
-  <p>Quản lý thông tin của các nhà cung cấp trong cửa hàng</p>
-</div>  
+<div>
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="input-group justify-content-end">
+                <input type="text" placeholder="Tìm kiếm">
+                <a class="btn btn-outline-primary" href="#" role="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <h3>Thêm nhà cung cấp</h3>
-      <p>Thêm một nhà cung cấp mới vào cửa hàng</p>
+<br />
 
-      <a href="/supplierNew" class="btn btn-primary" role="button">Di chuyển tới trang</a>
+
+<div class="row">
+    <div class="col-sm-3">
 
     </div>
-
-    <div class="col-sm-6">
-      <h3>Xem lọc và chỉnh sửa nhà cung cấp</h3>        
-      <p>Xem và lọc nhà cung cấp</p>
-      
-      <a href="/supplierList" class="btn btn-primary" role="button">Di chuyển tới trang</a>
-      
-
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Loại : Tất cả</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
     </div>
-  </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Tình trạng : Tất cả</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Sắp xếp : Không sắp xếp</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    {{#each Supplier}}
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>Mã nhà cung cấp:</p>
+                            <p>Tên nhà cung cấp:</p>
+                            <p>Địa chỉ nhà cung cấp:</p>
+                            <a href="/suppliers/{{MaNhaCungCap}}" class="btn btn-primary" role="button">-></a>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>{{MaNhaCungCap}}</p>
+                            <p>{{TenNhaCungCap}}</p>
+                            <p>{{DiaChi}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<div class="card-footer text-muted position-fixed rounded-pill bottom-0 right-0 mb-7 mr-5 p-0">
+    <a class="btn btn-outline-success btn-pill " href="/suppliers/supplierNew" role="button">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Thêm mới
+    </a>
 </div>
 
 
