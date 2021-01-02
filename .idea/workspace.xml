@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0c347fe-9918-4453-97a9-772c603663fb" name="Default Changelist" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,8 +74,7 @@
       <workItem from="1609233871720" duration="8619000" />
       <workItem from="1609298469489" duration="23398000" />
       <workItem from="1609382593520" duration="25982000" />
-      <workItem from="1609502332502" duration="11269000" />
-      <workItem from="1609552888435" duration="22269000" />
+
     </task>
     <servers />
   </component>
@@ -94,4 +93,5 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+
 </project>
