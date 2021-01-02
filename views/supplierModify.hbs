@@ -24,7 +24,7 @@
 <div class="row">
     <div class="card">
         <div class="card-body">
-            <form method="post" id="addSupplierForm" action="/supplierDetail/{{MaNhaCungCap}}/modify">
+            <form method="post" id="addSupplierForm" action="/suppliers/{{MaNhaCungCap}}/modify">
                 <div class="row" id="headInfoSupplier">
 
                     <div class="col-sm-3">
@@ -105,12 +105,10 @@
 
     <div class="containers">
         <div class="text-right">
-            <a
-                    href="/suppliers/{{MaNhaCungCap}}" class="btn btn-outline-danger" id="cancelAddSupplier" role="button">
+            <a href="/suppliers/{{MaNhaCungCap}}" class="btn btn-outline-danger" id="cancelAddSupplier" role="button">
                 Hủy </a>
             </a>
-            <button
-                    class="btn btn-outline-info" id="addSupplier" type="submit" form="addSupplierForm">
+            <button class="btn btn-outline-info" id="addSupplier" type="submit" form="addSupplierForm" formmethod="post">
                 + Lưu thay đổi </button>
 
 
