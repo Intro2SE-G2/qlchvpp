@@ -42,22 +42,24 @@ let initPassportLocal=()=>
 
         }
     ))
+
+    passport.serializeUser((NhanVien,done)=>
+    {
+        done(null,NhanVien.MaNhanVien);
+    })
+
+    passport.deserializeUser((MaNhanVien,done)=>
+    {
+        loginService.findMaNhanVien(MaNhanVien).then((NhanVien)=>
+        {
+            return done(null,NhanVien);
+        }).catch(error=>
+        {
+            return done(error,null)
+        });
+    });
 }
 
-passport.serializeUser((NhanVien,done)=>
-{
-    done(null,NhanVien.MaNhanVien);
-})
 
-passport.deserializeUser((MaNhanVien,done)=>
-{
-    loginService.findMaNhanVien(MaNhanVien).then((NhanVien)=>
-    {
-        return done(null,NhanVien);
-    }).catch(error=>
-    {
-        return done(error,null)
-    });
-});
 
 module.exports=initPassportLocal;

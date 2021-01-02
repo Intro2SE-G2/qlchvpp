@@ -1,0 +1,131 @@
+<h1>
+
+
+
+        <div class="containters">
+
+
+
+            <div class="text-right">
+                <a>
+                    <a href="/profile/modify" class="btn btn-info" id="modifySupplier" role="link">
+                        Chỉnh sửa</a>
+                </a>
+            </div>
+
+        </div>
+
+    </h1>
+
+    <br />
+
+    <body>
+
+
+    {{#user}}
+
+    <div class="row">
+        <div class="card">
+            <div class="card-header" id="headInfoSupplier">
+                <p>Thông tin tài khoản</p>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Mã nhân viên
+                    </div>
+                    <div class="col-sm-8">
+                        {{MaNhanVien}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Tên nhân viên
+                    </div>
+                    <div class="col-sm-8">
+                        {{TenNhanVien}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        SDT
+                    </div>
+                    <div class="col-sm-8">
+                        {{SDT}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Email
+                    </div>
+                    <div class="col-sm-8">
+                        {{Email}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Giới tính
+                    </div>
+                    <div class="col-sm-8">
+                        {{GioiTinh}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {{/user}}
+
+
+<br />
+
+
+
+<style>
+    #headInfoSupplier {
+        border-bottom: 3px solid whitesmoke;
+        padding-bottom: 3px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #infoSupplier {
+        border-bottom: 3px solid whitesmoke;
+        padding-bottom: 25px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #modifySupplier {
+        margin-right: 0px;
+    }
+
+    #removeSuplier {
+        border-bottom: 3px solid whitesmoke;
+        font-size: 12px;
+        margin-right: 0px;
+    }
+</style>
+
+<script>
+    if (performance.navigation.type==2) {
+        location.reload();
+    }
+</script>
+</body>

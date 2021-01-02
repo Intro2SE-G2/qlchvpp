@@ -5,6 +5,9 @@ var express = require('express');
 var expressHbs =  require('express-handlebars');
 
 
+var app = express();
+
+
 var path = require('path');
 
 var cookieParser=require("cookie-parser");
@@ -13,6 +16,37 @@ var session=require("express-session");
 var passport=require("passport");
 
 var logger = require('morgan');
+
+
+
+
+app.use(cookieParser('secret'));
+
+
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(session({
+  secret:'secret',
+  resave:false,
+  saveUninitialized:false,
+
+}));
+
+app.use(connectFlash());
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+const initPassportLocal=require('./Controller/passportLocalController');
+initPassportLocal();
+
 
 
 var logOutRouter=require('./routes/logOut');
@@ -41,12 +75,12 @@ var supplierNewRouter = require('./routes/supplierNew');
 var supplierListRouter = require('./routes/supplierList');
 var supplierDetailRouter=require('./routes/supplierDetail');
 
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/profile');
 
 var defaultRouter=require('./routes/defaultRoute');
 
 
-var app = express();
+
 
 var bodyParser=require('body-parser');
 
@@ -66,29 +100,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 
-app.use(cookieParser('secret'));
 
-app.use(session({
-  secret:'secret',
-  resave:true,
-  saveUninitialized:false,
-  cookie:
-      {
-        maxAge:1000*60*60*24
-      }
-}));
-
-app.use(connectFlash());
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 
@@ -113,7 +125,7 @@ app.use('/supplierDetail',supplierDetailRouter);
 app.use('/customerNew',customNewRouter);
 
 app.use('/supplierList', supplierListRouter);
-app.use('/users', usersRouter);
+app.use('/profile', usersRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   

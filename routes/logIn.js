@@ -2,8 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const passport=require('passport');
-const initPassportLocal=require('../Controller/passportLocalController');
-initPassportLocal();
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
