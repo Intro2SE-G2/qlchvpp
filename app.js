@@ -21,12 +21,10 @@ var indexRouter = require('./routes/index');
 var billRouter = require('./routes/bills');
 
 var customerRouter = require('./routes/customers');
-var customNewRouter=require('./routes/customerNew');
 
 var employeeRouter = require('./routes/employees');
 
 var inventoryRouter = require('./routes/inventories');
-var inventoryNewRouter = require('./routes/inventoryNew');
 var loginRouter = require('./routes/login');
 
 var productRouter = require('./routes/products');
@@ -35,11 +33,8 @@ var receiptRouter = require('./routes/receipts');
 
 var statisticRouter = require('./routes/statistics');
 
-var supplierRouter = require('./routes/supplies');
-var supplierNewRouter = require('./routes/supplierNew');
+var supplierRouter = require('./routes/suppliers');
 
-var supplierListRouter = require('./routes/supplierList');
-var supplierDetailRouter=require('./routes/supplierDetail');
 
 var usersRouter = require('./routes/users');
 
@@ -102,17 +97,11 @@ app.use('/bills', billRouter);
 app.use('/customers', customerRouter);
 app.use('/employees', employeeRouter);
 app.use('/inventories', inventoryRouter);
-app.use('/inventoryNew', inventoryNewRouter);
 app.use('/login', loginRouter);
 app.use('/products', productRouter);
 app.use('/receipts', receiptRouter);
 app.use('/statistics', statisticRouter);
 app.use('/suppliers', supplierRouter);
-app.use('/supplierNew', supplierNewRouter);
-app.use('/supplierDetail',supplierDetailRouter);
-app.use('/customerNew',customNewRouter);
-
-app.use('/supplierList', supplierListRouter);
 app.use('/users', usersRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

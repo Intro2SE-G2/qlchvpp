@@ -19,7 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-
+    <list default="true" id="9a83848a-f497-4fd3-8078-981e6cedd88a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/routes/suppliers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/supplierControler.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/supplierControler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/customerNew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/inventories.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/inventories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/inventoryNew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/supplierDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/supplierList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/supplierNew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/supplies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/customers.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/customers.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/inventories.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/inventories.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/supplierDetail.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/supplierDetail.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/supplierModify.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/supplierModify.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/supplierNew.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/supplierNew.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/suppliers.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/suppliers.hbs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +93,6 @@
       <workItem from="1609233871720" duration="8619000" />
       <workItem from="1609298469489" duration="23398000" />
       <workItem from="1609382593520" duration="25982000" />
-
     </task>
     <servers />
   </component>
@@ -93,5 +111,26 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-
+  <component name="WindowStateProjectService">
+    <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609580478176">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1609580478176" />
+    <state width="1493" height="68" key="GridCell.Tab.0.bottom" timestamp="1609583039832">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="68" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609583039832" />
+    <state width="1493" height="68" key="GridCell.Tab.0.center" timestamp="1609583039832">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="68" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609583039832" />
+    <state width="1493" height="68" key="GridCell.Tab.0.left" timestamp="1609583039832">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="68" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609583039832" />
+    <state width="1493" height="68" key="GridCell.Tab.0.right" timestamp="1609583039832">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="68" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609583039832" />
+  </component>
 </project>
