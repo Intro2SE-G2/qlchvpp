@@ -6,7 +6,7 @@ const db_query=require('../DAL/qlchvppDAL');
 
 exports.add=async(supplier)=>
 {
-    db_query('INSERT INTO nhacungcap SET MaNhaCungCap=?,TenNhaCungCap=?,SDT=?,Email=?,DiaChi=?',[supplier.MaNhaCungCap,
+    await db_query('INSERT INTO nhacungcap SET MaNhaCungCap=?,TenNhaCungCap=?,SDT=?,Email=?,DiaChi=?',[supplier.MaNhaCungCap,
                        supplier.TenNhaCungCap,
                         supplier.SDT,
                       supplier.Email,
@@ -44,7 +44,7 @@ exports.supplerList=async()=>
 
 exports.modify=async(supplier)=>
 {
-    db_query('UPDATE nhacungcap SET TenNhaCungCap=?,SDT=?,Email=?,DiaChi=? where MaNhaCungCap=?' ,[
+    await db_query('UPDATE nhacungcap SET TenNhaCungCap=?,SDT=?,Email=?,DiaChi=? where MaNhaCungCap=?' ,[
         supplier.TenNhaCungCap,
         supplier.SDT,
         supplier.Email,

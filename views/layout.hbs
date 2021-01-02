@@ -94,14 +94,17 @@
                                 <i class="align-middle mr-1 text-dark" data-feather="user"></i>Tài khoản
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <h3 class="align-middle m-3 text-center" id="userName">{{userName}}</h3>
-                                <h6 class="align-middle mb-3 text-center" id="userPosition">{{userPosition}}</h6>
+                                <h3 class="align-middle m-3 text-center" id="userName">{{TenNhanVien}}</h3>
+                                <h6 class="align-middle mb-3 text-center" id="userPosition">{{ChucVu}}</h6>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="users"><i class="align-middle mr-1" data-feather="user"></i>Tài khoản</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i>Hướng dẫn sử dụng</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logIn" ><i class="align-middle mr-1" data-feather="log-out"></i>Đăng xuất</a>
+
+                                <form action="/logout" method="post">
+                                <button class="dropdown-item" type="submit" ><i class="align-middle mr-1" data-feather="log-out"></i>Đăng xuất</button>
+                                </form>
                             </div>
                         </li>
                     </ul>

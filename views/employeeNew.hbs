@@ -4,10 +4,10 @@
         <div class="row mt-3">
             <div  class="col">
                 <a>
-                    <a href="/customers"  class="back-btn" role="link">
+                    <a href="/employees" class="back-btn" role="link">
                         <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>  </a>
                 </a>
-                Chi tiết khách hàng
+                Thêm tài khoản
             </div>
 
         </div>
@@ -18,19 +18,23 @@
 
 <body>
 <div class="row">
+
+
+    <form method="post" id="addSupplierForm" action="/employees/employeeNew">
+
     <div class="card">
         <div class="card-body">
-            <form method="post" id="addSupplierForm">
+
                 <div class="row" id="headInfoSupplier">
 
                     <div class="col-sm-3">
-                        <p><b>Mã khách hàng</b></p>
+                        <p><b>Mã nhân viên</b></p>
                     </div>
 
                     <div class="col-sm-5">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="MaKhachHang" readonly value="{{displayKey}}"
+                            <input type="text" class="form-control" aria-label="Default" name="MaNhanVien" readonly value="{{displayKey}}"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -48,12 +52,12 @@
                 <br />
                 <div class="row" id="infoSupplier">
                     <div class="col-sm-3">
-                        <p><b>Tên khách hàng</b></p>
+                        <p><b>Tên nhân viên</b></p>
                     </div>
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="TenKhachHang"
+                            <input type="text" class="form-control" aria-label="Default" name="TenNhanVien"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -81,7 +85,7 @@
                     <div class="col-sm-7">
                         <div class="input-group mb-3">
 
-                            <input type="text" class="form-control" aria-label="Default" name="Email"
+                            <input type="date" class="form-control" aria-label="Default" name="Email"
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
@@ -102,22 +106,151 @@
                 </div>
 
 
+                <br />
                 <div class="row" id="infoSupplier">
                     <div class="col-sm-3">
                         <p><b>Giới tính</b></p>
                     </div>
                     <div class="col-sm-7">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam">
-                            <label class="form-check-label" for="exampleRadios1">
-                                Nam
-                            </label>
+                        <div class="input-group mb-3">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nam" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Nam
+                                </label>
+                            </div>
+
                         </div>
+                    </div>
+                </div>
+
+            <div class="row" id="infoSupplier">
+                <div class="col-sm-3">
+
+                </div>
+                <div class="col-sm-7">
+                    <div class="input-group mb-3">
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios2" value="Nữ">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="GioiTinh" id="exampleRadios1" value="Nữ" checked>
+                            <label class="form-check-label" for="exampleRadios1">
                                 Nữ
                             </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+        <br>
+
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row" id="headInfoSupplier">
+
+                    <div class="col-sm-3">
+                        <p><b>Mật khẩu</b></p>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="input-group mb-3">
+
+                            <input type="password" class="form-control" aria-label="Default" name="MatKhau"
+                                   aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row" id="headInfoSupplier">
+
+                    <div class="col-sm-3">
+                        <p><b>Nhập lại mật khẩu</b></p>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="input-group mb-3">
+
+                            <input type="password" class="form-control" aria-label="Default" name="NhapLaiMatKhau"
+                                   aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <br>
+
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-3">
+                        <p><b>Chức vụ</b></p>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="input-group mb-3">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ChucVu" id="exampleRadios2" value="1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Nhân viên bán hàng
+                                </label>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-3">
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="input-group mb-3">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ChucVu" id="exampleRadios2" value="2" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Nhân viên kho
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-3">
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="input-group mb-3">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ChucVu" id="exampleRadios2" value="3" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Quản trị viên
+                                </label>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -127,10 +260,15 @@
 
 
 
-            </form>
+            </div>
+
+
         </div>
 
-    </div>
+
+
+
+    </form>
 
 
     <div class="containers">
@@ -239,7 +377,9 @@
 <script
 >
 
-
 </script>
 
 </body>
+
+
+

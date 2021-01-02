@@ -6,8 +6,16 @@ var expressHbs =  require('express-handlebars');
 
 
 var path = require('path');
-var cookieParser = require('cookie-parser');
+
+var cookieParser=require("cookie-parser");
+var connectFlash=require("connect-flash");
+var session=require("express-session");
+var passport=require("passport");
+
 var logger = require('morgan');
+
+
+var logOutRouter=require('./routes/logOut');
 
 var indexRouter = require('./routes/index');
 var billRouter = require('./routes/bills');
@@ -34,8 +42,19 @@ var supplierListRouter = require('./routes/supplierList');
 var supplierDetailRouter=require('./routes/supplierDetail');
 
 var usersRouter = require('./routes/users');
+
+var defaultRouter=require('./routes/defaultRoute');
+
+
 var app = express();
 
+var bodyParser=require('body-parser');
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 var hbs = expressHbs.create({});
 
@@ -47,15 +66,38 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 
+app.use(cookieParser('secret'));
+
+app.use(session({
+  secret:'secret',
+  resave:true,
+  saveUninitialized:false,
+  cookie:
+      {
+        maxAge:1000*60*60*24
+      }
+}));
+
+app.use(connectFlash());
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+
+
+
+
+app.use('/',defaultRouter);
+
+app.use('/logout',logOutRouter);
+app.use('/homepage',indexRouter);
 app.use('/bills', billRouter);
 app.use('/customers', customerRouter);
 app.use('/employees', employeeRouter);

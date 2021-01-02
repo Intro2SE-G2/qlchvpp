@@ -2,7 +2,7 @@ const db_query=require('../DAL/qlchvppDAL');
 
 exports.add=async(Customer)=>
 {
-    db_query('Insert into khachhang SET MaKhachHang=?,TenKhachHang=?,DiaChi=?,SDT=?,Email=?,GioiTinh=?',
+    await db_query('Insert into khachhang SET MaKhachHang=?,TenKhachHang=?,DiaChi=?,SDT=?,Email=?,GioiTinh=?',
         [Customer.MaKhachHang,Customer.TenKhachHang,Customer.DiaChi,Customer.SDT,Customer.Email,Customer.GioiTinh],function(err,result)
     {
         if (err) throw err;
@@ -27,7 +27,7 @@ exports.detail=async(id)=>
 
 
 exports.modify=async(customer)=> {
-    db_query('UPDATE khachhang SET TenKhachHang=?,SDT=?,Email=?,DiaChi=?,GioiTinh=? where MaKhachHang=?', [
+    await db_query('UPDATE khachhang SET TenKhachHang=?,SDT=?,Email=?,DiaChi=?,GioiTinh=? where MaKhachHang=?', [
         customer.TenKhachHang,
         customer.SDT,
         customer.Email,
