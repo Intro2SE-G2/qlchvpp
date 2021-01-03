@@ -97,7 +97,7 @@
 
         </div>
     </div>
-    {{/Supplier}}
+
 
     <br />
 
@@ -106,17 +106,19 @@
             <div class="card-body">
                 <div class="containers">
                     <div class="text-left">
-                        <a>
-                            <a href="#" class="btn btn-danger" id="removeSupplier" role="link">
+                     <form method="post" action="/suppliers/{{MaNhaCungCap}}/delete">
+                            <button  class="btn btn-danger" id="removeSupplier" type="submit">
                                 Xóa nhà cung cấp
-                            </a>
-                        </a>
+                            </button>
+                     </form>
+
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+{{/Supplier}}
 
     <style>
         #headInfoSupplier {

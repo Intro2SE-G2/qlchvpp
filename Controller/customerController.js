@@ -55,6 +55,12 @@ exports.postModify=async(req,res,next)=>
     customer.GioiTinh=req.body.GioiTinh;
 
     const backUrl="/customers/"+customer.MaKhachHang;
-    await customerModel.modify(customer).then(res.redirect(backUrl));
+    await customerModel.modify(customer).then(res.redirect(301,backUrl));
 
+}
+
+exports.postDelete=async(req,res,next)=>
+{
+    let MaKhachHang=req.params.MaKhachHang;
+    await customerModel.delete(MaKhachHang).then(res.redirect(301,'/customers'));
 }

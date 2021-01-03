@@ -28,9 +28,36 @@ exports.addNewSupplier=async(req,res,next)=>
 
 exports.listSupplier=async(req,res,next)=>
 {
-    let list=await supplierModel.supplerList();
 
-    res.render('suppliers',{title:"Quản lý nhà cung cấp",Supplier:list});
+    const totalRow=await supplierModel.totalRow();
+    if (req.query.page<1)
+    {
+        res.redirect('suppliers?page=1');
+    }
+
+    const CurrentPage=req.query.page || 1;
+    const NextPage=CurrentPage+1;
+    const PreviousPage=CurrentPage-1;
+
+    const totalPage=Math.ceil(totalRow/)
+
+    const ItemPerPage=req.query.itemperpage || 2;
+
+    if (CurrentPage==1)
+    {
+
+    }
+
+
+
+    let list=await supplierModel.pagination(CurrentPage,ItemPerPage);
+
+    res.render('suppliers',{title:"Quản lý nhà cung cấp",Supplier:list,
+
+    CurrentPage:CurrentPage,
+        NextPage:NextPage,
+        PreviousPage:PreviousPage
+    });
 
 }
 
@@ -59,5 +86,11 @@ exports.postModify=async(req,res,next)=>
     console.log(supplier.MaNhaCungCap);
 
     const backUrl='/suppliers/'+supplier.MaNhaCungCap;
-    await supplierModel.modify(supplier).then(res.redirect(backUrl));
+    await supplierModel.modify(supplier).then(res.redirect(301,backUrl));
+}
+
+exports.postDelete=async(req,res,next)=>
+{
+    const MaNhaCungCap=req.params.MaNhaCungCap;
+    await supplierModel.delete(MaNhaCungCap).then(res.redirect(301,'suppliers'));
 }

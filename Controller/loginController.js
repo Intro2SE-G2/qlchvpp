@@ -2,9 +2,12 @@
 
 exports.checkSignIn=function (req,res,next)
 {
-    if (req.isAuthenticated()==false)
-    {
-        return res.redirect('/users/login');
+    if(req.isAuthenticated()==false && req.url != '/users/login') {
+
+        req.flash('error','Bạn cần đăng nhập trước')
+        res.redirect('/users/login');
+
+        return;
     }
     next();
 }
@@ -27,4 +30,9 @@ exports.postSignOut=function(req,res)
     {
         return res.redirect('/users/login');
     })
+}
+
+exports.RenderSignIn=function(req,res)
+{
+    return res.render('login',{layout:false,title:'Đăng nhập',error:req.flash('error')});
 }

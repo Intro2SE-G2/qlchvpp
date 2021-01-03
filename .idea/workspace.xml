@@ -19,6 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="1cf96e88-3dc3-4971-b9e1-c3e3111f7c6c" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -28,6 +29,9 @@
       <change beforePath="$PROJECT_DIR$/routes/logOut.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.hbs" afterDir="false" />
     </list>
+=======
+    <list default="true" id="b18a1a5d-aec9-4c03-ac30-42e6ea43cd0e" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +104,7 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="WindowStateProjectService">
     <state x="492" y="164" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609593213416">
       <screen x="0" y="0" width="1536" height="834" />
@@ -122,4 +127,6 @@
     </state>
     <state width="1478" height="67" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609593356553" />
   </component>
+=======
+>>>>>>> Stashed changes
 </project>

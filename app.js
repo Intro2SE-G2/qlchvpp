@@ -35,17 +35,27 @@ app.use(session({
   secret:'secret',
   resave:false,
   saveUninitialized:false,
+  cookie:{
+    maxAge: 60000
+  }
 
 }));
 
 app.use(connectFlash());
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 const initPassportLocal=require('./Controller/passportLocalController');
 initPassportLocal();
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+const authenthicate=require('./Controller/loginController');
+app.use(authenthicate.checkSignIn);
+
 
 
 
@@ -68,7 +78,11 @@ var statisticRouter = require('./routes/statistics');
 var supplierRouter = require('./routes/suppliers');
 
 
+
 var usersRouter = require('./routes/users');
+
+var profileRouter = require('./routes/profile');
+
 
 var defaultRouter=require('./routes/defaultRoute');
 
@@ -110,7 +124,7 @@ app.use('/products', productRouter);
 app.use('/receipts', receiptRouter);
 app.use('/statistics', statisticRouter);
 app.use('/suppliers', supplierRouter);
-
+app.use('/profile',profileRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   
@@ -139,6 +153,21 @@ handleBar.registerHelper('CheckGioiTinh',function(Value,CurrentValue) {
   }
 
 });
+
+handleBar.registerHelper('DisplayPage',function(Page,TotalPage)
+{
+  if (Page==TotalPage)
+  {
+    return 'hidden';
+  }
+  else if (Page==1)
+  {
+    return 'hidden';
+  }
+
+})
+
+
 
 hbs.handlebars.registerHelper('json', function(context) {
   return JSON.stringify(context);

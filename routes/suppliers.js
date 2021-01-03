@@ -15,6 +15,9 @@ router.post('/supplierNew',supplierController.addNewSupplier);
 router.get('/:MaNhaCungCap',supplierController.detail);
 router.get('/:MaNhaCungCap/modify',supplierController.modify);
 router.post('/:MaNhaCungCap/modify',supplierController.postModify);
+router.post('/:MaNhaCungCap/delete',supplierController.postDelete);
+
+
 module.exports = router;
 
 

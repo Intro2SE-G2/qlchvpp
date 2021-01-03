@@ -39,6 +39,15 @@ exports.modify=async(customer)=> {
     });
 }
 
+exports.delete=async(MaKhachHang)=>
+{
+    await db_query('DELETE from khachhang where MaKhachHang=?',MaKhachHang,function(err,result)
+    {
+        if (err)throw err;
+        console.log('Delete successful');
+    })
+}
+
 
     function getDetail(id) {
         return new Promise((resolve, reject) => {

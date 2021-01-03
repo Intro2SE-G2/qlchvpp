@@ -26,12 +26,30 @@ exports.totalRow=async()=>
     return total;
 }
 
+exports.delete=async(MaNhaCungCap)=>
+{
+    await db_query('DELETE nhacungcap where MaNhaCungCap=?',MaNhaCungCap,function(err,result)
+    {
+        if(err)throw err;
+        console.log('Delete successful');
+    })
+}
+
 
 exports.detail=async(id)=>
 {
     let supplier=await getSupplier(id);
     return supplier;
 }
+
+exports.pagination=async(Page,ItemPerPage)=>
+{
+    let Offset=(Page-1)*ItemPerPage;
+    let Limit=ItemPerPage;
+    let listSupplier=await getListPaginate(Limit,Offset);
+    return listSupplier;
+}
+
 
 exports.supplerList=async()=>
 {
@@ -58,7 +76,14 @@ exports.modify=async(supplier)=>
 }
 
 
-
+function getListPaginate(Limit,Offset)
+{
+    return new Promise((resolve, reject) => {
+        db_query('SELECT * from nhacungcap limit ? offset ?',[Limit,Offset], (err, result) => {
+            return err ? reject(err) : resolve(result);
+        });
+    });
+}
 
 
 function getTotal()

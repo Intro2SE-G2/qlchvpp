@@ -1,23 +1,5 @@
-<h1>
 
 
-
-        <div class="containters">
-
-
-
-            <div class="text-right">
-                <a>
-                    <a href="/profile/modify" class="btn btn-info" id="modifySupplier" role="link">
-                        Chỉnh sửa</a>
-                </a>
-            </div>
-
-        </div>
-
-    </h1>
-
-    <br />
 
     <body>
 
@@ -27,7 +9,16 @@
     <div class="row">
         <div class="card">
             <div class="card-header" id="headInfoSupplier">
-                <p>Thông tin tài khoản</p>
+
+                <div class="float-left">
+                    <p>Thông tin tài khoản</p>
+                </div>
+                <div class="float-right">
+                    <a href="/profile/modify" class="btn btn-info" id="modifySupplier" role="link">
+                        Chỉnh sửa thông tin</a>
+                </div>
+
+
             </div>
 
 
@@ -91,6 +82,35 @@
     </div>
 
     {{/user}}
+
+    <div class="card">
+        <div class="card-header" id="headInfoSupplier">
+
+            <div class="float-left">
+            <p>Mật khẩu</p>
+            </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="row" id="infoSupplier">
+                <div class="col-sm-4">
+                    <a href="/profile/changepassword" class="btn btn-info" id="modifySupplier" role="link">
+                        Thay đổi mật khẩu</a>
+                </div>
+                <div class="col-sm-8">
+
+                </div>
+            </div>
+
+            <br />
+        </div>
+
+    </div>
+
+
 
 
 <br />
