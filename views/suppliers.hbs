@@ -91,6 +91,23 @@
     </a>
 </div>
 
+
+<div class="row">
+<div class="col-sm-3">
+    <form>
+        <input name="page" value="{{CurrentPage}}" readonly type="hidden">
+        <label for="itemperpage">Số lượng hiển thị:</label>
+    <select  name="itemperpage" onchange="this.form.submit()">
+        <option {{#DisplayPage itemperpage '==' 5}} selected{{/DisplayPage}} value="5">5</option>
+        <option  {{#DisplayPage itemperpage '==' 10}} selected{{/DisplayPage}} value="10">10</option>
+        <option  {{#DisplayPage itemperpage '==' 20}} selected{{/DisplayPage}} value="20">20</option>
+    </select>
+
+    </form>
+
+</div>
+
+    <div class="col-sm-9">
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item">
@@ -99,9 +116,12 @@
                 <span class="sr-only">Previous</span>
             </a>
         </li>
-        <li class="page-item"><a class="page-link" href="suppliers?page={{PreviousPage}}&itemperpage=2">{{PreviousPage}}</a></li>
-        <li class="page-item active"><a class="page-link"  href="suppliers?page={{CurrentPage}}&itemperpage=2">{{CurrentPage}}</a></li>
-        <li class="page-item"><a class="page-link" {{DisplayPage NextPage TotalPage}} href="suppliers?page={{NextPage}}&itemperpage=2">{{NextPage}}</a></li>
+
+        <li class="page-item"><a class="page-link" {{#if CanRenderBackBack}} hidden{{/if}} href="/suppliers?page={{PreviousPreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPreviousPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderBack}} hidden{{/if}} href="/suppliers?page={{PreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPage}}</a></li>
+        <li class="page-item active"><a class="page-link"  href="/suppliers?page={{CurrentPage}}&itemperpage={{itemperpage}}">{{CurrentPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderNext}} hidden{{/if}}  href="/suppliers?page={{NextPage}}&itemperpage={{itemmperpage}}">{{NextPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderNextNext}} hidden{{/if}} href="/suppliers?page={{NextNextPage}}&itemperpage={{itemperpage}}">{{NextNextPage}}</a></li>
         <li class="page-item">
             <a class="page-link" href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
@@ -110,7 +130,8 @@
         </li>
     </ul>
 </nav>
-
+    </div>
+</div>
 
 
 

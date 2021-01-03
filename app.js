@@ -154,18 +154,40 @@ handleBar.registerHelper('CheckGioiTinh',function(Value,CurrentValue) {
 
 });
 
-handleBar.registerHelper('DisplayPage',function(Page,TotalPage)
+handleBar.registerHelper('DisplayPage',function(v1,operator,v2,options)
 {
-  if (Page==TotalPage)
-  {
-    return 'hidden';
-  }
-  else if (Page==1)
-  {
-    return 'hidden';
-  }
 
+  v1=parseInt(v1);
+  v2=parseInt(v2);
+
+  switch (operator) {
+    case '==':
+      return (v1 == v2) ? options.fn(this) : options.inverse(this);
+    case '===':
+      return (v1 === v2) ? options.fn(this) : options.inverse(this);
+    case '!=':
+      return (v1 != v2) ? options.fn(this) : options.inverse(this);
+    case '!==':
+      return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+    case '<':
+      return (v1 < v2) ? options.fn(this) : options.inverse(this);
+    case '<=':
+      return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+    case '>':
+      return (v1 > v2) ? options.fn(this) : options.inverse(this);
+    case '>=':
+      return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+    case '&&':
+      return (v1 && v2) ? options.fn(this) : options.inverse(this);
+    case '||':
+      return (v1 || v2) ? options.fn(this) : options.inverse(this);
+    default:
+      return options.inverse(this);
+  }
 })
+
+
+
 
 
 

@@ -22,8 +22,8 @@ exports.add=async(supplier)=>
 exports.totalRow=async()=>
 {
     let total=await getTotal();
-    console.log(total);
-    return total;
+    total=total[0].total;
+    return parseFloat(total);
 }
 
 exports.delete=async(MaNhaCungCap)=>
@@ -79,7 +79,7 @@ exports.modify=async(supplier)=>
 function getListPaginate(Limit,Offset)
 {
     return new Promise((resolve, reject) => {
-        db_query('SELECT * from nhacungcap limit ? offset ?',[Limit,Offset], (err, result) => {
+        db_query('SELECT * from nhacungcap LIMIT ?,?',[parseInt(Offset),parseInt(Limit)], (err, result) => {
             return err ? reject(err) : resolve(result);
         });
     });
@@ -89,7 +89,7 @@ function getListPaginate(Limit,Offset)
 function getTotal()
 {
     return new Promise((resolve, reject) => {
-        db_query('SELECT COUNT (*) from nhacungcap',null, (err, result) => {
+        db_query('SELECT COUNT (*) as total from nhacungcap',null, (err, result) => {
             return err ? reject(err) : resolve(result);
         });
     });

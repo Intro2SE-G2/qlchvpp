@@ -29,19 +29,37 @@ exports.addNewSupplier=async(req,res,next)=>
 exports.listSupplier=async(req,res,next)=>
 {
 
-    const totalRow=await supplierModel.totalRow();
+    let totalRow=await supplierModel.totalRow();
+    console.log(totalRow);
+    totalRow=parseFloat(totalRow);
     if (req.query.page<1)
     {
         res.redirect('suppliers?page=1');
     }
 
-    const CurrentPage=req.query.page || 1;
-    const NextPage=CurrentPage+1;
-    const PreviousPage=CurrentPage-1;
 
-    const totalPage=Math.ceil(totalRow/)
+    const ItemPerPage=parseFloat(req.query.itemperpage) || 5;
+    const CurrentPage=parseFloat(req.query.page) || 1;
 
-    const ItemPerPage=req.query.itemperpage || 2;
+
+    console.log("Item per page "+ItemPerPage);
+    console.log("Current page "+CurrentPage);
+
+    const totalPage=Math.ceil(totalRow/ItemPerPage);
+
+
+    const NextPage=parseFloat(CurrentPage)+1;
+    const PreviousPage=parseFloat(CurrentPage-1);
+
+    const NextNextPage=NextPage+1;
+    const PreviousPreviousPage=PreviousPage-1;
+
+
+
+
+
+
+    console.log(totalPage);
 
     if (CurrentPage==1)
     {
@@ -52,11 +70,52 @@ exports.listSupplier=async(req,res,next)=>
 
     let list=await supplierModel.pagination(CurrentPage,ItemPerPage);
 
+    console.log(PreviousPage);
+    console.log(NextPage);
+    console.log(PreviousPreviousPage);
+    console.log(NextNextPage);
+
+    let CanRenderBackBack=false;
+    let CanRenderNextNext=false;
+
+    let CanRenderBack=false;
+    let CanRenderNext=false;
+
+
+    if (CurrentPage-2<=0)
+    {
+        CanRenderBackBack=true;
+    }
+
+    if (CurrentPage+2>totalPage)
+    {
+        CanRenderNextNext=true;
+    }
+    if (CurrentPage-1<=0)
+    {
+        CanRenderBack=true;
+    }
+    if (CurrentPage+1>totalPage)
+    {
+        CanRenderNext=true
+    }
+
+
+
     res.render('suppliers',{title:"Quản lý nhà cung cấp",Supplier:list,
 
     CurrentPage:CurrentPage,
         NextPage:NextPage,
-        PreviousPage:PreviousPage
+        PreviousPage:PreviousPage,
+        TotalPage:totalPage,
+        PreviousPreviousPage:PreviousPreviousPage,
+        NextNextPage:NextNextPage,
+        CanRenderNext,
+        CanRenderBack,
+        CanRenderBackBack,
+        CanRenderNextNext,
+        itemperpage:ItemPerPage
+
     });
 
 }
