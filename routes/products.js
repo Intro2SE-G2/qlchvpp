@@ -1,15 +1,26 @@
 var express = require('express');
 var router = express.Router();
 
+const upload=require("../Controller/multer");
+const productController=require('../Controller/productController');
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.render('products',{ title: 'Quản lý Hàng hóa' })
-});
-router.get('/id', function(req, res, next) {
-    res.render('productDetail',{ title: 'Chi tiết Hàng hóa' })
-});
-router.get('/productNew', function(req, res, next) {
-    res.render('productNew',{ title: 'Thêm Hàng hóa' })
-});
+
+
+router.get('/',productController.listCustomer);
+
+router.get('/productNew',productController.RenderAdd);
+router.get('/productNew',productController.RenderAdd);
+
+
+
+
+
+router.get('/:MaMatHang',productController.RenderDetail);
+
+router.post('/productNew/upload',productController.postUpload);
+
+
+router.post('/productNew',upload.single('file'),productController.postUpload);
 
 module.exports = router;

@@ -27,11 +27,9 @@
             <option value="2">Giảm dần</option>
         </select>
     </h4>
-    {{#if this.empty}}
-        <div class="card-body">
-            <p class="card-text">Không có dữ liệu.</p>
-        </div>
-    {{else}}
+
+
+    {{#mathang}}
         <!--Test part-->
         <div class="card col-3 text-center">
             <img class="card-img-top " src="" alt="Product">
@@ -81,7 +79,7 @@
                         </tbody>
                     </table>
                     <div class="dropdown-divider"></div>
-                    <a class="btn btn-success btn-pill btn-sm align-content-stretch" href="/products/id" role="button">
+                    <a class="btn btn-success btn-pill btn-sm align-content-stretch" href="/products/{{MaMatHang}}" role="button">
                         Xem chi tiết
                     </a>
                 </div>
@@ -89,70 +87,7 @@
             </div>
         </div>
         <!--Test part-->
-        <div class="card-body">
-            <div class="row">
-                {{#each this.khachhang}}
-                {{!-- <div class="row"> --}}
-                    <div class="card col-3 text-center">
-                        <img class="card-img-top " src="" alt="Product">
-                        <div class="card-header">
-                            <h5 class="card-title font-weight-bold">Tên sản phẩm</h5>
-                            <p class="card-text">Mã sản phẩm</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                                <table class="table-responsive table-sm table-borderless font-weight-light">
-                                    <thead>
-                                    <tr>
-                                        <th >Tình trạng</th>
-                                        <th >Giá bán</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td class="p">Ngừng kinh doanh</td>
-                                        <td>100.000d</td>
-                                    </tr>
-
-                                    </tbody>
-
-                                    <thead>
-                                    <tr>
-                                        <th >Tồn kho</th>
-                                        <th >Đơn vị tính</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td >20</td>
-                                        <td>Cái</td>
-                                    </tr>
-                                    </tbody>
-                                    <thead>
-                                    <tr>
-                                        <th >Loại</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Bút</td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-                                <div class="dropdown-divider"></div>
-                                <a class="btn btn-success btn-pill btn-sm stretched-link" href="/product/id" role="button">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                {{!-- </div> --}}
-                {{/each}}
-            </div>
-        </div>
-    {{/if}}
+    {{/mathang}}
     <div class="card-footer text-muted position-fixed rounded-pill bottom-0 right-0 mb-7 mr-5 p-0">
         <a class="btn btn-outline-success btn-pill " href="/products/productNew" role="button">
             <i class="fa fa-plus" aria-hidden="true"></i>

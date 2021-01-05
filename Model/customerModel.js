@@ -24,6 +24,38 @@ exports.detail=async(id)=>
     return customer;
 }
 
+exports.TotalRow=async()=>
+{
+    const total=await getTotal();
+    return total[0].total;
+}
+
+exports.pagination=async(Page,ItemPerPage)=>
+{
+    let Offset=(Page-1)*ItemPerPage;
+    let Limit=ItemPerPage;
+    let listCustomer=await getListPaginate(Limit,Offset);
+    return listCustomer;
+}
+
+function getListPaginate(Limit,Offset)
+{
+    return new Promise((resolve, reject) => {
+        db_query('SELECT * from khachhang LIMIT ?,?',[parseInt(Offset),parseInt(Limit)], (err, result) => {
+            return err ? reject(err) : resolve(result);
+        });
+    });
+}
+
+
+function getTotal() {
+    return new Promise((resolve, reject) => {
+        db_query('SELECT COUNT (*) as total from khachhang',null, (err, result) => {
+            return err ? reject(err) : resolve(result);
+        });
+    });
+}
+
 
 
 exports.modify=async(customer)=> {

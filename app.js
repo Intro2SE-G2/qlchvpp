@@ -19,6 +19,7 @@ var logger = require('morgan');
 
 
 
+const multer = require('multer');
 
 app.use(cookieParser('secret'));
 
@@ -36,7 +37,7 @@ app.use(session({
   resave:false,
   saveUninitialized:false,
   cookie:{
-    maxAge: 60000
+    maxAge: 6000000000
   }
 
 }));
@@ -111,7 +112,7 @@ app.set('view engine', 'hbs');
 
 
 
-
+app.use('/products', productRouter);
 
 app.use('/',defaultRouter);
 app.use('/users',usersRouter);
@@ -120,7 +121,7 @@ app.use('/bills', billRouter);
 app.use('/customers', customerRouter);
 app.use('/employees', employeeRouter);
 app.use('/inventories', inventoryRouter);
-app.use('/products', productRouter);
+
 app.use('/receipts', receiptRouter);
 app.use('/statistics', statisticRouter);
 app.use('/suppliers', supplierRouter);

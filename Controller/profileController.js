@@ -2,6 +2,7 @@
 const profileModel=require('../Model/profileModel');
 
 
+
 exports.RenderProfile=function(req,res,next)
 {
     const user=req.user;

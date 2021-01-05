@@ -12,18 +12,38 @@ exports.RenderAddNew=async (req,res,next) =>{
     let displayKey= await Date.now();
     const utcSecondsSinceEpoch = Math.round(displayKey / 1000)
     displayKey="NCC"+utcSecondsSinceEpoch;
-    res.render('supplierNew',{title:'Thêm mới nhà cung cấp',displayKey:displayKey});
+
+
+
+    let CurrentPage=req.flash('Page');
+    let ItemPerPage=req.flash('ItemPerPage');
+
+    req.flash('Page',CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
+    const backUrl="/suppliers?page="+CurrentPage+"&itemperpage="+ItemPerPage;
+
+
+
+    res.render('supplierNew',{title:'Thêm mới nhà cung cấp',displayKey:displayKey,CurrentPage:CurrentPage,ItemPerPage:ItemPerPage
+    ,backUrl:backUrl});
 }
 
 exports.addNewSupplier=async(req,res,next)=>
 {
+    let page=req.flash('Page');
+    let itemperpage=req.flash('ItemPerPage');
+
+    console.log("Thêm mới hiển thị page",page);
+
+
+    const backUrl="/suppliers?page="+page+"&itemperpage"+itemperpage;
     const supplier={};
     supplier.MaNhaCungCap=req.body.MaNCC;
     supplier.TenNhaCungCap=req.body.TenNCC;
     supplier.SDT=req.body.SDT;
     supplier.Email=req.body.Email;
     supplier.DiaChi=req.body.DiaChi;
-    await supplierModel.add(supplier).then(res.redirect('/suppliers'));
+    await supplierModel.add(supplier).then(res.redirect(backUrl));
 }
 
 exports.listSupplier=async(req,res,next)=>
@@ -34,8 +54,10 @@ exports.listSupplier=async(req,res,next)=>
     totalRow=parseFloat(totalRow);
     if (req.query.page<1)
     {
-        res.redirect('suppliers?page=1');
+        res.redirect('/suppliers?page=1');
     }
+
+
 
 
     const ItemPerPage=parseFloat(req.query.itemperpage) || 5;
@@ -101,6 +123,11 @@ exports.listSupplier=async(req,res,next)=>
     }
 
 
+    req.flash('Page',"");
+    req.flash('ItemPerPage',"");
+
+    req.flash('Page',CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
 
     res.render('suppliers',{title:"Quản lý nhà cung cấp",Supplier:list,
 
@@ -123,12 +150,22 @@ exports.listSupplier=async(req,res,next)=>
 exports.detail=async(req,res,next)=>
 {
     const id=req.params.MaNhaCungCap;
-    console.log(id);
+
+
+
+    let CurrentPage=req.flash('Page');
+    let ItemPerPage=req.flash('ItemPerPage');
+
+    req.flash(('Page'),CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
+
+    let backUrl="/suppliers?page="+CurrentPage+"&itemperpage="+ItemPerPage;
     const supplier=await supplierModel.detail(id)
-    res.render('supplierDetail',{title:"Chi tiết nhà cung cấp", Supplier:supplier});
+    res.render('supplierDetail',{title:"Chi tiết nhà cung cấp", Supplier:supplier,backUrl:backUrl});
 }
 exports.modify=async(req,res,next)=>
 {
+
     const id=req.params.MaNhaCungCap;
     const supplier=await supplierModel.detail(id);
     res.render('supplierModify',{title:"Chỉnh sửa",Supplier:supplier});
@@ -144,12 +181,15 @@ exports.postModify=async(req,res,next)=>
 
     console.log(supplier.MaNhaCungCap);
 
+
+
+
     const backUrl='/suppliers/'+supplier.MaNhaCungCap;
-    await supplierModel.modify(supplier).then(res.redirect(301,backUrl));
+    await supplierModel.modify(supplier).then(res.redirect(backUrl));
 }
 
 exports.postDelete=async(req,res,next)=>
 {
     const MaNhaCungCap=req.params.MaNhaCungCap;
-    await supplierModel.delete(MaNhaCungCap).then(res.redirect(301,'suppliers'));
+    await supplierModel.delete(MaNhaCungCap).then(res.redirect('suppliers'));
 }

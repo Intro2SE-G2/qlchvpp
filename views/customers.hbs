@@ -1,73 +1,139 @@
-<h1>Quản lý khách hàng</h1>
-<div class="card">
-  <h5 class="card-header d-flex justify-content-between">
-     <div class="input-group justify-content-end">
-                 <input type="text" placeholder="Tìm kiếm">
-                    <a class="btn btn-outline-primary" href="#" role="button">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </a> 
-        </div>    
-  </h5>
-  <h4 class="card-header d-flex justify-content-end">
-            <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
-                <option selected>Sắp xếp: Không sắp xếp</option>
-                <option value="1">Tăng dần</option>
-                <option value="2">Giảm dần</option>
-                <option value="3">Lộn xộn</option>
-            </select>
-            <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;">
-                <option selected>Lọc: Tình trạng</option>
-                <option value="1">Tăng dần</option>
-                <option value="2">Giảm dần</option>
-                <option value="3">Lộn xộn</option>
-            </select>
-            <select class="custom-select" id="inputGroupSelect01" style="margin-right: 15px;"> 
-                <option selected>Theo:</option>
-                <option value="1">Tăng dần</option>
-                <option value="2">Giảm dần</option>
-                <option value="3">Lộn xộn</option>
-            </select>
-  </h4>
-  {{#if this.empty}}
-  <div class="card-body">
-    <p class="card-text">Không có dữ liệu.</p>
-  </div>
-  {{else}}
-  <div class="card-body">
+
+<h1>
+    Quản lý khách hàng
+</h1>
+
+
+<div>
     <div class="row">
-      {{#each this.khachhang}}
-        {{!-- <div class="row"> --}}
-          <div class="col-md-6">
-            <div class="card border-left border-bottom border-right border-top">
-              <div class="card-body">
-                <div class="row justify-content-between">
-                  <div class="col-5 text-truncate">
-                      <p class="card-text">Mã khách hàng:</p>
-                      <p class="card-text">Tên khách hàng:</p>
-                      <p class="card-text">Số điện thoại:</p>
-                  </div>
-                  <div class="col-7 text-truncate">
-                    <p class="card-text">{{MaKhachHang}}</p>
-                    <p class="card-text">{{TenKhachHang}}</p>
-                    <p class="card-text">{{SDT}}</p>
-                    <a class="btn btn-success float-right" href="/customers/{{MaKhachHang}}" role="button">
-                  <i class="fas fa-edit "></i>
-                </a> 
-                  </div>
-                </div>
-                
-              </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="input-group justify-content-end">
+                <input type="text" placeholder="Tìm kiếm">
+                <a class="btn btn-outline-primary" href="#" role="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
             </div>
-          </div>
-        {{!-- </div> --}}
-      {{/each}}
+        </div>
     </div>
-  </div>
-  {{/if}}
-  <div class="card-footer text-muted">
-    <a class="btn btn-outline-success float-right" href="/customers/customerNew" role="button">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-        Thêm khách hàng
-    </a>
-  </div>
 </div>
+
+<br />
+
+
+<div class="row">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Loại : Tất cả</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Tình trạng : Tất cả</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Sắp xếp : Không sắp xếp</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    {{#khachhang}}
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>Mã khách hàng:</p>
+                            <p>Tên khách hàng:</p>
+                            <p>SDT khách hàng:</p>
+
+                            <a href="/customers/{{MaKhachHang}}" class="btn btn-primary" role="button">-></a>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <p>{{MaKhachHang}}</p>
+                            <p>{{TenKhachHang}}</p>
+                            <p>{{SDT}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/khachhang}}
+</div>
+<div class="card-footer text-muted position-fixed rounded-pill bottom-0 right-0 mb-7 mr-5 p-0">
+    <a class="btn btn-outline-success btn-pill " href="/customers/customerNew" role="button">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Thêm mới
+    </a>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-2">
+        <form>
+            <input name="page" value="{{CurrentPage}}" readonly type="hidden">
+            <label for="itemperpage">Số lượng hiển thị:</label>
+            <select  name="itemperpage" onchange="this.form.submit()">
+                <option {{#DisplayPage itemperpage '==' 5}} selected{{/DisplayPage}} value="5">5</option>
+                <option  {{#DisplayPage itemperpage '==' 10}} selected{{/DisplayPage}} value="10">10</option>
+                <option  {{#DisplayPage itemperpage '==' 20}} selected{{/DisplayPage}} value="20">20</option>
+            </select>
+
+        </form>
+
+    </div>
+
+    <div class="row mt-2">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item {{#if CanRenderBack}} disabled {{/if}}"  >
+                    <a class="page-link" href="/customers?page={{PreviousPage}}&itemperpage={{itemperpage}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Trang trước</span>
+                    </a>
+                </li>
+
+                <li class="page-item"><a class="page-link" {{#if CanRenderBackBack}} hidden{{/if}} href="/customers?page={{PreviousPreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPreviousPage}}</a></li>
+                <li class="page-item"><a class="page-link"  {{#if CanRenderBack}} hidden{{/if}} href="/customers?page={{PreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPage}}</a></li>
+                <li class="page-item active"><a class="page-link"  href="/customers?page={{CurrentPage}}&itemperpage={{itemperpage}}">{{CurrentPage}}</a></li>
+                <li class="page-item"><a class="page-link"  {{#if CanRenderNext}} hidden{{/if}}  href="/customers?page={{NextPage}}&itemperpage={{itemperpage}}">{{NextPage}}</a></li>
+                <li class="page-item"><a class="page-link"  {{#if CanRenderNextNext}} hidden{{/if}} href="/customers?page={{NextNextPage}}&itemperpage={{itemperpage}}">{{NextNextPage}}</a></li>
+                <li class="page-item {{#if CanRenderNext}} disabled {{/if}}" >
+                    <a class="page-link" href="/customers?page={{NextPage}}&itemperpage={{itemperpage}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Trang sau</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+

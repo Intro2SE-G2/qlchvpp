@@ -1,20 +1,20 @@
 <h1>
 
 
-{{#Supplier}}
+
     <div class="containters">
 
 
 
         <div class="text-left">
             <a>
-                <a href="/suppliers" class="back-btn " role="link">
+                <a href="{{backUrl}}" class="back-btn " role="link">
                     <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>  </a>
                 </a>
                 Thông tin chi tiết nhà cung cấp
         </div>
 
-
+{{#Supplier}}
         <div class="text-right">
             <a>
                 <a href="/suppliers/{{MaNhaCungCap}}/modify" class="btn btn-info" id="modifySupplier" role="link">

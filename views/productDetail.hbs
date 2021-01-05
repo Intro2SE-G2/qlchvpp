@@ -1,70 +1,154 @@
-<h1 class="d-flex justify-content-between">
-    <div>
-        <a href="/products" class="btn btn-outline-primary" role="link"><-</a>Chi tiết mặt hàng
-    </div>
+<h1>
 
-    <div >
-        <a class="btn btn-outline-success" href="/products/id" class="btn" role="button">Chỉnh sửa
+
+
+<div class="containters">
+
+
+
+    <div class="text-left">
+        <a>
+            <a href="{{backUrl}}" class="back-btn " role="link">
+                <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>  </a>
         </a>
-    </div>
-</h1>
-
-
-<div class="card">
-    <div class="card-body">
-        <h5 class="font-weight-bold" >Hình ảnh</h5>
-        <div class="dropdown-divider"></div>
-        <img class="card-img-top " src="" alt="Product">
+        Thông tin chi tiết nhà cung cấp
     </div>
 
-</div>
-
-<div class="card">
-    <div class="card-body">
-        <h5 class="font-weight-bold" >Thông tin mặt hàng</h5>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Mã mặt hàng</label>
-            <input class="col-8 border-0" type="text" readonly value="MH0001"/>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Tên mặt hàng</label>
-            <input class="col-8 border-0" type="text" readonly value="Bút bi Thiên Long"/>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Loại</label>
-            <input class="col-8 border-0" type="text" readonly value="Bút bi"/>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Đơn vị tính</label>
-            <input class="col-8 border-0" type="text" readonly value="Chiếc"/>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Đơn giá</label>
-            <input class="col-8 border-0" type="text" readonly value="1000đ"/>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Tồn kho</label>
-            <input class="col-8 border-0" type="number" min="0" readonly value="80"/>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div class="row d-flex align-items-center">
-            <label class="col-3 border-0">Tình trạng</label>
-            <input class="col-8 border-0" type="text" readonly value="Ngừng kinh doanh"/>
+{{#mathang}}
+        <div class="text-right">
+            <a>
+                <a href="/product/{{MaMatHang}}/modify" class="btn btn-info" id="modifySupplier" role="link">
+                    Chỉnh sửa</a>
+            </a>
         </div>
 
     </div>
 
-</div>
-<div class="card">
-    <div class="card-body">
-        <h5 class="font-weight-bold" >Xóa mặt hàng</h5>
-        <div class="dropdown-divider"></div>
-        <button class="btn btn-danger">Xóa mặt hàng</button>
+    </h1>
+
+    <br />
+
+    <body>
+
+
+
+    <div class="row">
+        <div class="card">
+            <div class="card-header" id="headInfoSupplier">
+                <p>Thông tin mặt hàng</p>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Mã mặt hàng
+                    </div>
+                    <div class="col-sm-8">
+                        {{MaMatHang}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Tên mặt hàng
+                    </div>
+                    <div class="col-sm-8">
+                        {{TenMatHang}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Đơn vị tính
+                    </div>
+                    <div class="col-sm-8">
+                        {{DonViTinh}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Đơn giá
+                    </div>
+                    <div class="col-sm-8">
+                        {{DonGia}}
+                    </div>
+                </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Địa chỉ
+                    </div>
+                    <div class="col-sm-8">
+                        {{DiaChi}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
+
+
+    <br />
+
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="containers">
+                    <div class="text-left">
+                        <form method="post" action="/products/{{MaMatHang}}/delete">
+                            <button  class="btn btn-danger" id="removeSupplier" type="submit">
+                                Xóa mặt hàng
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{{/mathang}}
+
+<style>
+    #headInfoSupplier {
+        border-bottom: 3px solid whitesmoke;
+        padding-bottom: 3px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #infoSupplier {
+        border-bottom: 3px solid whitesmoke;
+        padding-bottom: 25px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #modifySupplier {
+        margin-right: 0px;
+    }
+
+    #removeSuplier {
+        border-bottom: 3px solid whitesmoke;
+        font-size: 12px;
+        margin-right: 0px;
+    }
+</style>
+
+<script>
+    if (performance.navigation.type==2) {
+        location.reload();
+    }
+</script>
+</body>

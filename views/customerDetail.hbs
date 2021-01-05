@@ -1,19 +1,19 @@
 <h3>
 
 
-{{#khachhang}}
+
         <div class="containters">
 
             <div class="row mt-3">
                 <div  class="col">
                 <a>
-                    <a href="/customers" class="back-btn" role="link">
+                    <a href="{{backUrl}}" class="back-btn" role="link">
                         <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>  </a>
                 </a>
                 Chi tiết khách hàng
                 </div>
 
-
+{{#khachhang}}
                 <div class="col">
                     <div class="float-right">
                         <a>
@@ -158,9 +158,7 @@
 </style>
 
 <script>
-    if (performance.navigation.type==2) {
-        location.reload();
-    }
+
 </script>
 </body>
 

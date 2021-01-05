@@ -70,7 +70,9 @@
                             <p>Mã nhà cung cấp:</p>
                             <p>Tên nhà cung cấp:</p>
                             <p>Địa chỉ nhà cung cấp:</p>
+
                             <a href="/suppliers/{{MaNhaCungCap}}" class="btn btn-primary" role="button">-></a>
+
                         </div>
                         <div class="col-sm-6">
                             <p>{{MaNhaCungCap}}</p>
@@ -93,7 +95,7 @@
 
 
 <div class="row">
-<div class="col-sm-3">
+<div class="col-sm-2">
     <form>
         <input name="page" value="{{CurrentPage}}" readonly type="hidden">
         <label for="itemperpage">Số lượng hiển thị:</label>
@@ -107,25 +109,25 @@
 
 </div>
 
-    <div class="col-sm-9">
+    <div class="row mt-2">
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
+        <li class="page-item {{#if CanRenderBack}} disabled {{/if}}"  >
+            <a class="page-link" href="/suppliers?page={{PreviousPage}}&itemperpage={{itemperpage}}" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Trang trước</span>
             </a>
         </li>
 
         <li class="page-item"><a class="page-link" {{#if CanRenderBackBack}} hidden{{/if}} href="/suppliers?page={{PreviousPreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPreviousPage}}</a></li>
         <li class="page-item"><a class="page-link"  {{#if CanRenderBack}} hidden{{/if}} href="/suppliers?page={{PreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPage}}</a></li>
         <li class="page-item active"><a class="page-link"  href="/suppliers?page={{CurrentPage}}&itemperpage={{itemperpage}}">{{CurrentPage}}</a></li>
-        <li class="page-item"><a class="page-link"  {{#if CanRenderNext}} hidden{{/if}}  href="/suppliers?page={{NextPage}}&itemperpage={{itemmperpage}}">{{NextPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderNext}} hidden{{/if}}  href="/suppliers?page={{NextPage}}&itemperpage={{itemperpage}}">{{NextPage}}</a></li>
         <li class="page-item"><a class="page-link"  {{#if CanRenderNextNext}} hidden{{/if}} href="/suppliers?page={{NextNextPage}}&itemperpage={{itemperpage}}">{{NextNextPage}}</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
+        <li class="page-item {{#if CanRenderNext}} disabled {{/if}}" >
+            <a class="page-link" href="/suppliers?page={{NextPage}}&itemperpage={{itemperpage}}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Trang sau</span>
             </a>
         </li>
     </ul>

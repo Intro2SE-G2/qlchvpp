@@ -1,10 +1,10 @@
 
 <h1>
     <div >
-        <a href="/products" class="btn btn-outline-primary mr-2" role="link"><-</a>Thêm hàng hóa
+        <a href="/products" class="btn btn-outline-primary mr-2" role="link">Thêm hàng hóa</a>
     </div>
 </h1>
-<form>
+<form method="post" action="/products/productNew" id="addProductForm">
     <div class="card">
         <div class="card-body">
             <div class="row d-flex align-items-center">
@@ -14,7 +14,7 @@
                 <div class="col-3 float-left">
                     <div class="input-group mb-3">
 
-                        <input type="text" class="form-control" aria-label="Default" name="MaHH" readonly value="{{displayKey}}"
+                        <input type="text" class="form-control" aria-label="Default" name="MaMatHang" readonly value="{{displayKey}}"
                                aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
@@ -26,49 +26,49 @@
 
             <div class="row d-flex  mb-2">
                 <label class="col-3 ">Tên mặt hàng</label>
-                <input class="col-8 " type="text" placeholder="Nhập tên hàng hóa"/>
+                <input class="col-8 " name="TenMatHang" type="text" placeholder="Nhập tên hàng hóa"/>
             </div>
             <div class="row d-flex mb-2">
                 <label class="col-3 ">Xuất xứ</label>
-                <input class="col-8" type="text" placeholder="Nhập xuất xứ"/>
+                <input class="col-8" name="XuatXu" type="text" placeholder="Nhập xuất xứ"/>
             </div>
             <div class="row d-flex mb-2">
                 <label class="col-3 ">Đơn vị tính</label>
-                <input class="col-8 " type="text" placeholder="Nhập đơn vị tính"/>
+                <input class="col-8 " name="DonViTinh" type="text" placeholder="Nhập đơn vị tính"/>
             </div>
             <div class="row d-flex mb-2">
                 <label class="col-3">Đơn giá</label>
-                <input class="col-8" type="number" min="0"/>
+                <input class="col-8" type="number" name="DonGia" min="0"/>
             </div>
             <div class="row d-flex mb-2">
                 <label class="col-3">Loại</label>
-                <input class="col-8" type="text" placeholder="Nhập loại hàng hóa"/>
+                <input class="col-8" type="text" name="Loai" placeholder="Nhập loại hàng hóa"/>
             </div>
             <div class="dropdown-divider"></div>
             <h5 class="font-weight-bold mt-4 mb-4" >Tình trạng kho</h5>
             <div class="row d-flex mb-2">
                 <label class="col-3 ">Số lượng</label>
-                <input class="col-8 " type="number" min="0" placeholder="Nhập số lượng"/>
+                <input class="col-8 " type="number" min="0" name="SoLuong" placeholder="Nhập số lượng"/>
             </div>
             <div class="row d-flex inline">
                 <label class="col-3 border-0">Tình trạng</label>
                 <div class="col-8">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="TinhTrang" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Còn hàng
                         </label>
 
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="TinhTrang" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Hết hàng
                         </label>
 
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="TinhTrang" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Ngừng kinh doanh
                         </label>
@@ -80,7 +80,7 @@
             <h5 class="font-weight-bold mt-4 mb-4" >Hình ảnh</h5>
             <div class="row d-flex mb-2">
                 <label class="col-3 ">Đường dẫn hình</label>
-                <input class="col-8 " type="text"  placeholder="Nhập link hình ảnh"/>
+                <input class="col-8 " type="file" name="file"  placeholder="Nhập link hình ảnh"/>
             </div>
         </div>
 
