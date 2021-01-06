@@ -13,13 +13,14 @@ var sqlConnection = function sqlConnection(sql, values, next) {
 
     var connection = mysql.createConnection(
         {
-            host: "sql12.freemysqlhosting.net",
-            user:"sql12384348",
-            password:"AXCX5WgY4b",
-            database :  "sql12384348",
+            host: "remotemysql.com",
+            user:"EinH83LLzD",
+            password:"OJNOv4vpQ7",
+            database :  "EinH83LLzD",
 
         }
     );
+
     connection.connect(function(err) {
         if (err !== null) {
             console.log("[MYSQL] Error connecting to mysql:" + err+'\n');

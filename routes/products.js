@@ -23,6 +23,6 @@ router.get('/:MaMatHang',productController.RenderDetail);
 router.post('/productNew/upload',productController.postUpload);
 
 
-router.post('/productNew',upload.single('image'),productController.postUpload);
+router.post('/productNew',upload.array('image'),productController.postUpload);
 
 module.exports = router;

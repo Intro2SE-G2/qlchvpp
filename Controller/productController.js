@@ -142,12 +142,56 @@ exports.uploadMulter=
 
 exports.postUpload=async(req,res,next)=>
 {
-    console.log(req.file);
-    console.log(req.file.path);
-    const result = await cloudinary.uploader.upload(req.file.path);
-
-
     const product={};
+    product.HinhAnh="";
+
+
+    let paths = req.files.map(file => file.path);
+    let product_id=req.body.MaMatHang+"/";
+    let multipleUpload = new Promise(async (resolve, reject) => {
+        let upload_len = paths.length;
+        for(let i = 0; i < upload_len; i++)
+        {
+
+            let filePath = paths[i];
+            await cloudinary.uploader.upload(filePath,{folder:product_id},(error, result) => {
+
+
+
+                if(result)
+                {
+                    product.HinhAnh=result.secure_url+"\n"+product.HinhAnh;
+
+                } else if(error) {
+                    console.log(error)
+                    reject(error)
+                }
+            })
+
+        }
+        resolve('Complete')
+    })
+        .then((result) => result)
+        .catch((error) => error)
+
+    await multipleUpload.then(function() {
+
+            const fs = require('fs');
+            let i=0;
+            for (i=0;i<paths.length;i++)
+            {
+                fs.unlink(paths[i], (err) => {
+                    if (err) {
+                        console.error(err)
+                    }
+                })
+            }
+
+        }
+
+    );
+
+
     product.MaMatHang=req.body.MaMatHang;
     product.TenMatHang=req.body.TenMatHang;
     product.DonViTinh=req.body.DonViTinh;
@@ -156,8 +200,8 @@ exports.postUpload=async(req,res,next)=>
     product.DonGia=req.body.DonGia;
     product.TinhTrang=req.body.TinhTrang;
     product.Loai=req.body.Loai;
-    product.HinhAnh=result.secure_url
     // Save user
-    await productModel.add(product);
+    await productModel.add(product).then(res.redirect('/products'));
 
 }
+

@@ -29,17 +29,19 @@
     </h4>
 
 
+    <div class="row">
     {{#mathang}}
         <!--Test part-->
-        <div class="card col-3 text-center">
+
+        <div class="card col-4  text-center mx-1" style="width: 18rem">
             <img class="card-img-top " src="" alt="Product">
             <div class="card-header">
-                <h5 class="card-title font-weight-bold">Tên sản phẩm</h5>
-                <p class="card-text">Mã sản phẩm</p>
+                <h5 class="card-title font-weight-bold">{{TenMatHang}}</h5>
+                <p class="card-text">{{MaMatHang}}</p>
             </div>
             <div class="card-body align-content-center">
                 <div class="text-center">
-                    <table class="table-responsive table-sm mx-auto table-borderless font-weight-light">
+                    <table class="table-responsive  table-borderless font-weight-light">
                         <thead>
                         <tr>
                             <th >Tình trạng</th>
@@ -48,8 +50,8 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="p">Ngừng kinh doanh</td>
-                            <td>100.000d</td>
+                            <td>{{TinhTrang}}</td>
+                            <td>{{DonGia}}</td>
                         </tr>
 
                         </tbody>
@@ -62,21 +64,11 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td >20</td>
-                            <td>Cái</td>
+                            <td >{{SoLuong}}</td>
+                            <td>{{DonViTinh}}</td>
                         </tr>
                         </tbody>
                         <thead>
-                        <tr>
-                            <th >Loại</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Bút</td>
-                        </tr>
-
-                        </tbody>
                     </table>
                     <div class="dropdown-divider"></div>
                     <a class="btn btn-success btn-pill btn-sm align-content-stretch" href="/products/{{MaMatHang}}" role="button">
@@ -88,6 +80,7 @@
         </div>
         <!--Test part-->
     {{/mathang}}
+</div>
     <div class="card-footer text-muted position-fixed rounded-pill bottom-0 right-0 mb-7 mr-5 p-0">
         <a class="btn btn-outline-success btn-pill " href="/products/productNew" role="button">
             <i class="fa fa-plus" aria-hidden="true"></i>
