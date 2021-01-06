@@ -107,7 +107,7 @@
                         {{XuatXu}}
                     </div>
                 </div>
-
+{{/mathang}}
 
                 <br />
                 <br />
@@ -116,7 +116,9 @@
                         Hình ảnh
                     </div>
                     <div class="col-sm-8">
-
+                        {{#each HinhAnh}}
+                                <img src="{{this}}" style="width: 75px;height: 75px">
+                            {{/each}}
                     </div>
                 </div>
 
@@ -147,7 +149,7 @@
             </div>
         </div>
     </div>
-{{/mathang}}
+
 
 <style>
     #headInfoSupplier {

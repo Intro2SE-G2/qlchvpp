@@ -140,8 +140,16 @@ exports.RenderDetail=async(req,res,next)=>
 {
     let id=req.params.MaMatHang;
     const product=await productModel.detail(id);
+
+    const linkHinhAnh=product[0].HinhAnh.split('\n');
+
+    linkHinhAnh.pop();
+
+    console.log(linkHinhAnh);
+
+
     console.log(product);
-    res.render("productDetail",{title:'Chi tiết mặt hàng',mathang:product});
+    res.render("productDetail",{title:'Chi tiết mặt hàng',mathang:product,HinhAnh:linkHinhAnh});
 }
 
 exports.uploadMulter=
