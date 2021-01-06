@@ -143,6 +143,7 @@ exports.uploadMulter=
 exports.postUpload=async(req,res,next)=>
 {
     console.log(req.file);
+    console.log(req.file.path);
     const result = await cloudinary.uploader.upload(req.file.path);
 
 
