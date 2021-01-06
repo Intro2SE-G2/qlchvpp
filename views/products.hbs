@@ -29,19 +29,20 @@
     </h4>
 
 
+    <div class="container">
     <div class="row">
     {{#mathang}}
         <!--Test part-->
 
-        <div class="card col-4  text-center mx-1" style="width: 18rem">
-            <img class="card-img-top " src="" alt="Product">
+        <div class="card col-4  text-center" style="width: 18rem">
+            <img class="card-img-top " src="{{HinhAnh}}" alt="Product">
             <div class="card-header">
                 <h5 class="card-title font-weight-bold">{{TenMatHang}}</h5>
                 <p class="card-text">{{MaMatHang}}</p>
             </div>
-            <div class="card-body align-content-center">
+            <div class="card-body text-center">
                 <div class="text-center">
-                    <table class="table-responsive  table-borderless font-weight-light">
+                    <table class="table-responsive text-center  table-borderless font-weight-light">
                         <thead>
                         <tr>
                             <th >Tình trạng</th>
@@ -80,6 +81,7 @@
         </div>
         <!--Test part-->
     {{/mathang}}
+    </div>
 </div>
     <div class="card-footer text-muted position-fixed rounded-pill bottom-0 right-0 mb-7 mr-5 p-0">
         <a class="btn btn-outline-success btn-pill " href="/products/productNew" role="button">

@@ -21,8 +21,12 @@ var logger = require('morgan');
 
 const multer = require('multer');
 
+
+
 app.use(cookieParser('secret'));
 
+//const GenerateAdmin=require('./Service/generateAdmin');
+//app.use(GenerateAdmin.GenerateAdmin);
 
 
 app.use(logger('dev'));

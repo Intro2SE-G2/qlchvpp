@@ -3,8 +3,8 @@ const db_query=require('../DAL/qlchvppDAL');
 
 exports.add=async(product)=>
 {
-    await db_query('INSERT INTO mathang SET MaMatHang=?,TenMatHang=?,LoaiMatHang=?,DonGia=?,DonViTinh=?,HinhAnh=?,TinhTrang=?,XuatXu=?,Loai=?,SoLuong=?',[
-     product.MaMatHang,product.TenMatHang,product.Loai,product.DonGia,product.DonViTinh,product.HinhAnh,product.TinhTrang,product.XuatXu,product.Loai,product.SoLuong
+    await db_query('INSERT INTO mathang SET MaMatHang=?,TenMatHang=?,LoaiMatHang=?,DonGia=?,DonViTinh=?,HinhAnh=?,TinhTrang=?,XuatXu=?,SoLuong=?',[
+     product.MaMatHang,product.TenMatHang,product.Loai,product.DonGia,product.DonViTinh,product.HinhAnh,product.TinhTrang,product.XuatXu,product.SoLuong
 
     ],function(err,result)
         {

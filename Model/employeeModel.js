@@ -7,14 +7,15 @@ exports.add=async(NhanVien)=>
     let salt=bcrypt.genSaltSync(10);
     let HashMatKhau=bcrypt.hashSync(NhanVien.MatKhau,salt);
 
-    await db_query('INSERT INTO nhanvien SET MaNhanVien=?,TenNhanVien=?,SDT=?,Email=?,ChucVu=?,GioiTinh=?,MatKhau=?',[
+    await db_query('INSERT INTO nhanvien SET MaNhanVien=?,TenNhanVien=?,SDT=?,Email=?,ChucVu=?,GioiTinh=?,MatKhau=?,DiaChi=?',[
         NhanVien.MaNhanVien,
         NhanVien.TenNhanVien,
         NhanVien.SDT,
         NhanVien.Email,
         NhanVien.ChucVu,
         NhanVien.GioiTinh,
-        HashMatKhau
+        HashMatKhau,
+        NhanVien.DiaChi
 
     ],function (err,result)
     {
