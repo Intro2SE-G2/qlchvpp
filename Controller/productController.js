@@ -45,6 +45,13 @@ exports.listCustomer=async(req,res,next)=>
     console.log(totalPage);
 
     let list=await productModel.pagination(CurrentPage,ItemPerPage);
+    console.log("List size: "+list.length);
+
+    for (let i=0;i<list.length;i++)
+    {
+        let firstLine = list[i].HinhAnh.split('\n', 1)[0];
+        list[i].HinhAnh=firstLine;
+    }
 
     console.log(PreviousPage);
     console.log(NextPage);

@@ -13,11 +13,11 @@
         Chi tiết khách hàng
     </div>
 
-{{#khachhang}}
+{{#mathang}}
         <div class="col">
             <div class="float-right">
                 <a>
-                    <a href="/customers/{{MaKhachHang}}/modify" class="btn btn-info" id="modifySupplier" role="link">
+                    <a href="/products/{{MaMatHang}}/modify" class="btn btn-info" id="modifySupplier" role="link">
                         Chỉnh sửa</a>
                 </a>
             </div>
@@ -88,12 +88,40 @@
                 <br />
                 <div class="row" id="infoSupplier">
                     <div class="col-sm-4">
-                        Địa chỉ
+                        Loại
                     </div>
                     <div class="col-sm-8">
-                        {{DiaChi}}
+                        {{LoaiMatHang}}
                     </div>
                 </div>
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Xuất xứ
+                    </div>
+                    <div class="col-sm-8">
+
+
+                        {{XuatXu}}
+                    </div>
+                </div>
+
+
+                <br />
+                <br />
+                <div class="row" id="infoSupplier">
+                    <div class="col-sm-4">
+                        Hình ảnh
+                    </div>
+                    <div class="col-sm-8">
+
+                    </div>
+                </div>
+
+
+
             </div>
 
         </div>
