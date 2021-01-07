@@ -149,6 +149,7 @@ exports.listSupplier=async(req,res,next)=>
 
 exports.detail=async(req,res,next)=>
 {
+    
     const id=req.params.MaNhaCungCap;
 
 
@@ -192,4 +193,428 @@ exports.postDelete=async(req,res,next)=>
 {
     const MaNhaCungCap=req.params.MaNhaCungCap;
     await supplierModel.delete(MaNhaCungCap).then(res.redirect('suppliers'));
+}
+
+var keyWordSearch;
+
+exports.postSearchSupplier=async(req, res, next)=>
+{
+    keyWordSearch = await req.body.TenNCC;
+    console.log(keyWordSearch);
+    //const supplier = await supplierModel.search(keyWord);
+
+    let totalRow = await supplierModel.searchTotalRow(keyWordSearch);
+    console.log('search Total Row');
+    
+
+    totalRow=parseFloat(totalRow);  
+    console.log(totalRow);
+    if (req.query.page<1)
+    {
+        res.redirect('/suppliers/search?page=1');
+    }
+
+
+    
+
+    const ItemPerPage=parseFloat(req.query.itemperpage) || 5;
+    const CurrentPage=parseFloat(req.query.page) || 1;
+
+
+    console.log("Item per page "+ItemPerPage);
+    console.log("Current page "+CurrentPage);
+
+    const totalPage=Math.ceil(totalRow/ItemPerPage);
+    console.log("Total Page Search"+totalPage);
+
+    const NextPage=parseFloat(CurrentPage)+1;
+    const PreviousPage=parseFloat(CurrentPage-1);
+
+    const NextNextPage=NextPage+1;
+    const PreviousPreviousPage=PreviousPage-1;
+
+
+
+
+
+
+    
+
+    if (CurrentPage==1)
+    {
+
+    }
+
+
+
+    let listSearch = await supplierModel.searchPagination(CurrentPage,ItemPerPage, keyWordSearch);
+
+    console.log("Previous Page Search"+PreviousPage);
+    console.log("Next Page Search"+NextPage);
+    console.log("Previous Previous Page Search"+PreviousPreviousPage);
+    console.log("Next Next Page Search"+NextNextPage);
+
+    let CanRenderBackBack=false;
+    let CanRenderNextNext=false;
+
+    let CanRenderBack=false;
+    let CanRenderNext=false;
+
+
+    if (CurrentPage-2<=0)
+    {
+        CanRenderBackBack=true;
+    }
+
+    if (CurrentPage+2>totalPage)
+    {
+        CanRenderNextNext=true;
+    }
+    if (CurrentPage-1<=0)
+    {
+        CanRenderBack=true;
+    }
+    if (CurrentPage+1>totalPage)
+    {
+        CanRenderNext=true
+    }
+
+
+    req.flash('Page',"");
+    req.flash('ItemPerPage',"");
+
+    req.flash('Page',CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
+
+    res.render('supplierSearch',{title:"Tìm kiếm",Supplier:listSearch,
+
+    CurrentPage:CurrentPage,
+        NextPage:NextPage,
+        PreviousPage:PreviousPage,
+        TotalPage:totalPage,
+        PreviousPreviousPage:PreviousPreviousPage,
+        NextNextPage:NextNextPage,
+        CanRenderNext,
+        CanRenderBack,
+        CanRenderBackBack,
+        CanRenderNextNext,
+        itemperpage:ItemPerPage
+
+    });
+    //res.render('suppliers',{title:"Tìm kiếm",Supplier:supplier});
+}
+
+
+exports.getSearchSupplier=async(req, res, next)=>
+{
+    let totalRow = await supplierModel.searchTotalRow(keyWordSearch);
+    console.log('search Total Row');
+    
+
+    totalRow=parseFloat(totalRow);  
+    console.log(totalRow);
+    if (req.query.page<1)
+    {
+        res.redirect('/suppliers/search?page=1');
+    }
+
+
+    
+
+    const ItemPerPage=parseFloat(req.query.itemperpage) || 5;
+    const CurrentPage=parseFloat(req.query.page) || 1;
+
+
+    console.log("Item per page "+ItemPerPage);
+    console.log("Current page "+CurrentPage);
+
+    const totalPage=Math.ceil(totalRow/ItemPerPage);
+    console.log("Total Page Search"+totalPage);
+
+    const NextPage=parseFloat(CurrentPage)+1;
+    const PreviousPage=parseFloat(CurrentPage-1);
+
+    const NextNextPage=NextPage+1;
+    const PreviousPreviousPage=PreviousPage-1;
+
+
+
+
+
+
+    
+
+    if (CurrentPage==1)
+    {
+
+    }
+
+
+
+    let listSearch = await supplierModel.searchPagination(CurrentPage,ItemPerPage, keyWordSearch);
+
+    console.log("Previous Page Search"+PreviousPage);
+    console.log("Next Page Search"+NextPage);
+    console.log("Previous Previous Page Search"+PreviousPreviousPage);
+    console.log("Next Next Page Search"+NextNextPage);
+
+    let CanRenderBackBack=false;
+    let CanRenderNextNext=false;
+
+    let CanRenderBack=false;
+    let CanRenderNext=false;
+
+
+    if (CurrentPage-2<=0)
+    {
+        CanRenderBackBack=true;
+    }
+
+    if (CurrentPage+2>totalPage)
+    {
+        CanRenderNextNext=true;
+    }
+    if (CurrentPage-1<=0)
+    {
+        CanRenderBack=true;
+    }
+    if (CurrentPage+1>totalPage)
+    {
+        CanRenderNext=true
+    }
+
+
+    req.flash('Page',"");
+    req.flash('ItemPerPage',"");
+
+    req.flash('Page',CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
+
+    res.render('supplierSearch',{title:"Tìm kiếm",Supplier:listSearch,
+
+    CurrentPage:CurrentPage,
+        NextPage:NextPage,
+        PreviousPage:PreviousPage,
+        TotalPage:totalPage,
+        PreviousPreviousPage:PreviousPreviousPage,
+        NextNextPage:NextNextPage,
+        CanRenderNext,
+        CanRenderBack,
+        CanRenderBackBack,
+        CanRenderNextNext,
+        itemperpage:ItemPerPage
+
+    });
+}
+
+var keyWordSort;
+
+exports.postSortSupplierName=async(req, res, next)=>
+{
+    keyWordSort = await req.body.sortForm1;
+    console.log(keyWordSort);
+    //const supplier = await supplierModel.search(keyWord);
+
+    let totalRow = await supplierModel.sortTotalRow(keyWordSort);
+    
+    
+
+    totalRow=parseFloat(totalRow);  
+    console.log(totalRow);
+    if (req.query.page<1)
+    {
+        res.redirect('/suppliers/sort?page=1');
+    }
+
+
+    
+
+    const ItemPerPage=parseFloat(req.query.itemperpage) || 5;
+    const CurrentPage=parseFloat(req.query.page) || 1;
+
+
+    console.log("Item per page "+ItemPerPage);
+    console.log("Current page "+CurrentPage);
+
+    const totalPage=Math.ceil(totalRow/ItemPerPage);
+    console.log("Total Page Search"+totalPage);
+
+    const NextPage=parseFloat(CurrentPage)+1;
+    const PreviousPage=parseFloat(CurrentPage-1);
+
+    const NextNextPage=NextPage+1;
+    const PreviousPreviousPage=PreviousPage-1;
+
+
+
+
+
+
+    
+
+    if (CurrentPage==1)
+    {
+
+    }
+
+
+
+    let listSort = await supplierModel.sortPagination(CurrentPage,ItemPerPage, keyWordSort);
+
+    console.log("Previous Page Search"+PreviousPage);
+    console.log("Next Page Search"+NextPage);
+    console.log("Previous Previous Page Search"+PreviousPreviousPage);
+    console.log("Next Next Page Search"+NextNextPage);
+
+    let CanRenderBackBack=false;
+    let CanRenderNextNext=false;
+
+    let CanRenderBack=false;
+    let CanRenderNext=false;
+
+
+    if (CurrentPage-2<=0)
+    {
+        CanRenderBackBack=true;
+    }
+
+    if (CurrentPage+2>totalPage)
+    {
+        CanRenderNextNext=true;
+    }
+    if (CurrentPage-1<=0)
+    {
+        CanRenderBack=true;
+    }
+    if (CurrentPage+1>totalPage)
+    {
+        CanRenderNext=true
+    }
+
+
+    req.flash('Page',"");
+    req.flash('ItemPerPage',"");
+
+    req.flash('Page',CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
+
+    res.render('supplierSort',{title:"Sắp xếp",Supplier:listSort,
+
+    CurrentPage:CurrentPage,
+        NextPage:NextPage,
+        PreviousPage:PreviousPage,
+        TotalPage:totalPage,
+        PreviousPreviousPage:PreviousPreviousPage,
+        NextNextPage:NextNextPage,
+        CanRenderNext,
+        CanRenderBack,
+        CanRenderBackBack,
+        CanRenderNextNext,
+        itemperpage:ItemPerPage
+
+    });
+    //res.render('suppliers',{title:"Tìm kiếm",Supplier:supplier});
+}
+
+
+exports.getSortSupplierName=async(req, res, next)=>
+{
+    let totalRow = await supplierModel.sortTotalRow(keyWordSort);
+    
+
+    totalRow=parseFloat(totalRow);  
+    console.log(totalRow);
+    if (req.query.page<1)
+    {
+        res.redirect('/suppliers/sort?page=1');
+    }
+
+
+    
+
+    const ItemPerPage=parseFloat(req.query.itemperpage) || 5;
+    const CurrentPage=parseFloat(req.query.page) || 1;
+
+
+    console.log("Item per page "+ItemPerPage);
+    console.log("Current page "+CurrentPage);
+
+    const totalPage=Math.ceil(totalRow/ItemPerPage);
+    console.log("Total Page Search"+totalPage);
+
+    const NextPage=parseFloat(CurrentPage)+1;
+    const PreviousPage=parseFloat(CurrentPage-1);
+
+    const NextNextPage=NextPage+1;
+    const PreviousPreviousPage=PreviousPage-1;
+
+
+
+
+
+
+    
+
+    if (CurrentPage==1)
+    {
+
+    }
+
+
+
+    let listSort = await supplierModel.sortPagination(CurrentPage,ItemPerPage, keyWordSort);
+
+    console.log("Previous Page Search"+PreviousPage);
+    console.log("Next Page Search"+NextPage);
+    console.log("Previous Previous Page Search"+PreviousPreviousPage);
+    console.log("Next Next Page Search"+NextNextPage);
+
+    let CanRenderBackBack=false;
+    let CanRenderNextNext=false;
+
+    let CanRenderBack=false;
+    let CanRenderNext=false;
+
+
+    if (CurrentPage-2<=0)
+    {
+        CanRenderBackBack=true;
+    }
+
+    if (CurrentPage+2>totalPage)
+    {
+        CanRenderNextNext=true;
+    }
+    if (CurrentPage-1<=0)
+    {
+        CanRenderBack=true;
+    }
+    if (CurrentPage+1>totalPage)
+    {
+        CanRenderNext=true
+    }
+
+
+    req.flash('Page',"");
+    req.flash('ItemPerPage',"");
+
+    req.flash('Page',CurrentPage);
+    req.flash('ItemPerPage',ItemPerPage);
+
+    res.render('supplierSort',{title:"Sắp xếp",Supplier:listSort,
+
+    CurrentPage:CurrentPage,
+        NextPage:NextPage,
+        PreviousPage:PreviousPage,
+        TotalPage:totalPage,
+        PreviousPreviousPage:PreviousPreviousPage,
+        NextNextPage:NextNextPage,
+        CanRenderNext,
+        CanRenderBack,
+        CanRenderBackBack,
+        CanRenderNextNext,
+        itemperpage:ItemPerPage
+
+    });
+    //res.render('suppliers',{title:"Tìm kiếm",Supplier:supplier});
 }

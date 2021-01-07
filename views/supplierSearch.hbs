@@ -36,7 +36,7 @@
 
     </div>
     <div class="col-sm-6">
-        <div class="form-group">
+       <div class="form-group">
             <form method="POST" action="/suppliers/sort">
                  <select class="form-control" name="sortForm1" onchange="this.form.submit()">
                     <option name="" value="0" selected>Loại : --</option>
@@ -45,7 +45,7 @@
                 </select>
             </form>
            
-        </div>
+       </div>
     </div>
     {{!-- <div class="col-sm-3">
         <div class="form-group">
@@ -124,19 +124,19 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item {{#if CanRenderBack}} disabled {{/if}}"  >
-            <a class="page-link" href="/suppliers?page={{PreviousPage}}&itemperpage={{itemperpage}}" aria-label="Previous">
+            <a class="page-link" href="/suppliers/search?page={{PreviousPage}}&itemperpage={{itemperpage}}" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Trang trước</span>
             </a>
         </li>
 
-        <li class="page-item"><a class="page-link" {{#if CanRenderBackBack}} hidden{{/if}} href="/suppliers?page={{PreviousPreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPreviousPage}}</a></li>
-        <li class="page-item"><a class="page-link"  {{#if CanRenderBack}} hidden{{/if}} href="/suppliers?page={{PreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPage}}</a></li>
-        <li class="page-item active"><a class="page-link"  href="/suppliers?page={{CurrentPage}}&itemperpage={{itemperpage}}">{{CurrentPage}}</a></li>
-        <li class="page-item"><a class="page-link"  {{#if CanRenderNext}} hidden{{/if}}  href="/suppliers?page={{NextPage}}&itemperpage={{itemperpage}}">{{NextPage}}</a></li>
-        <li class="page-item"><a class="page-link"  {{#if CanRenderNextNext}} hidden{{/if}} href="/suppliers?page={{NextNextPage}}&itemperpage={{itemperpage}}">{{NextNextPage}}</a></li>
+        <li class="page-item"><a class="page-link" {{#if CanRenderBackBack}} hidden{{/if}} href="/suppliers/search?page={{PreviousPreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPreviousPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderBack}} hidden{{/if}} href="/suppliers/search?page={{PreviousPage}}&itemperpage={{itemperpage}}">{{PreviousPage}}</a></li>
+        <li class="page-item active"><a class="page-link"  href="/suppliers/search?page={{CurrentPage}}&itemperpage={{itemperpage}}">{{CurrentPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderNext}} hidden{{/if}}  href="/suppliers/search?page={{NextPage}}&itemperpage={{itemperpage}}">{{NextPage}}</a></li>
+        <li class="page-item"><a class="page-link"  {{#if CanRenderNextNext}} hidden{{/if}} href="/suppliers/search?page={{NextNextPage}}&itemperpage={{itemperpage}}">{{NextNextPage}}</a></li>
         <li class="page-item {{#if CanRenderNext}} disabled {{/if}}" >
-            <a class="page-link" href="/suppliers?page={{NextPage}}&itemperpage={{itemperpage}}" aria-label="Next">
+            <a class="page-link" href="/suppliers/search?page={{NextPage}}&itemperpage={{itemperpage}}" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Trang sau</span>
             </a>

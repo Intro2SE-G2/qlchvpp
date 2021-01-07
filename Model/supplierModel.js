@@ -28,7 +28,7 @@ exports.totalRow=async()=>
 
 exports.delete=async(MaNhaCungCap)=>
 {
-    await db_query('DELETE nhacungcap where MaNhaCungCap=?',MaNhaCungCap,function(err,result)
+    await db_query('DELETE FROM nhacungcap where MaNhaCungCap=?',MaNhaCungCap,function(err,result)
     {
         if(err)throw err;
         console.log('Delete successful');
@@ -75,6 +75,37 @@ exports.modify=async(supplier)=>
 
 }
 
+exports.searchPagination=async(Page,ItemPerPage, key)=>
+{
+    let Offset=(Page-1)*ItemPerPage;
+    let Limit=ItemPerPage;
+    let result=await searchSupplier(Limit, Offset, key);
+    return result;
+}
+
+exports.searchTotalRow=async(key)=>
+{
+    
+    let total=await getTotalRowSearch(key);
+    total=total[0].total;
+    return parseFloat(total);
+}
+
+exports.sortPagination=async(Page,ItemPerPage, key)=>
+{
+    let Offset=(Page-1)*ItemPerPage;
+    let Limit=ItemPerPage;
+    let result=await sortSupplierName(Limit, Offset, key);
+    return result;
+}
+
+exports.sortTotalRow=async(key)=>
+{
+    let total=await getTotalRowSort(key);
+    total=total[0].total;
+    return parseFloat(total);
+}
+
 
 function getListPaginate(Limit,Offset)
 {
@@ -113,4 +144,75 @@ function getListSupplier() {
             return err ? reject(err) : resolve(result);
         });
     });
+}
+
+function searchSupplier(Limit, Offset, key){
+    key = '%' + key + '%';
+    return new Promise((resolve, reject) => {
+        db_query('select * from nhacungcap where TenNhaCungCap like ? limit ?, ?', [key, parseInt(Offset),parseInt(Limit)], (err, result) => {
+            return err ? reject(err) : resolve(result);
+        });
+    });
+}
+
+function getTotalRowSearch(key) {
+    key = '%' + key + '%';
+    console.log(key);
+    return new Promise((resolve, reject) => {
+        db_query('select count(*) as total from nhacungcap where TenNhaCungCap like ?', key, (err, result) => {
+            return err ? reject(err) : resolve(result);
+        });
+    });
+}
+
+
+
+function sortSupplierName(Limit, Offset, key) {
+    if (key == "ASC") {
+        return new Promise((resolve, reject) => {
+            db_query('select * from nhacungcap order by TenNhaCungCap asc limit ?, ?', [parseInt(Offset),parseInt(Limit)], (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+    else if (key == "DSC") {
+        return new Promise((resolve, reject) => {
+            db_query('select * from nhacungcap order by TenNhaCungCap desc limit ?, ?', [parseInt(Offset),parseInt(Limit)], (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+    else {
+        return new Promise((resolve, reject) => {
+            db_query('select * from nhacungcap limit ?, ?', [parseInt(Offset),parseInt(Limit)], (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+    
+}
+
+function getTotalRowSort(key) {
+    if (key == "ASC") {
+        return new Promise((resolve, reject) => {
+            db_query('select count(*) as total from nhacungcap order by TenNhaCungCap asc', null, (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+    else if (key == "DSC") {
+        return new Promise((resolve, reject) => {
+            db_query('select count(*) as total from nhacungcap order by TenNhaCungCap desc', null, (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+    else {
+        return new Promise((resolve, reject) => {
+            db_query('select count(*) as total from nhacungcap', null, (err, result) => {
+                return err ? reject(err) : resolve(result);
+            });
+        });
+    }
+    
 }
