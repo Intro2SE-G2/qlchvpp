@@ -34,5 +34,5 @@ exports.postSignOut=function(req,res)
 
 exports.RenderSignIn=function(req,res)
 {
-    return res.render('login',{layout:false,title:'Đăng nhập',error:req.flash('error')});
+    return res.render('logIn',{layout:false,title:'Đăng nhập',error:req.flash('error')});
 }
